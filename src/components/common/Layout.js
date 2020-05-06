@@ -67,7 +67,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                         )}
                                     </Link>
                                 </div>
-                                <div className="site-mast-right">
+                                {/* <div className="site-mast-right">
                                     {site.twitter && (
                                         <a
                                             href={twitterUrl}
@@ -108,7 +108,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                             alt="RSS Feed"
                                         />
                                     </a>
-                                </div>
+                                </div> */}
                             </div>
                             {isHome ? (
                                 <div className="site-banner">
@@ -154,10 +154,10 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 <Link to="/">{site.title}</Link> © 2019
                             </div>
                             <div className="site-foot-nav-right">
-                                <Navigation
+                                {/* <Navigation
                                     data={site.navigation}
                                     navClass="site-foot-nav-item"
-                                />
+                                /> */}
                             </div>
                         </div>
                     </footer>
