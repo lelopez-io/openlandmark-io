@@ -42,8 +42,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         className="site-head"
                         style={{
                             ...(site.cover_image && {
-                                backgroundImage: `url(${site.cover_image})`,
-                            }),
+                                backgroundImage: `url(${site.cover_image})`
+                            })
                         }}
                     >
                         <div className="container">
@@ -151,16 +151,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2019 &mdash;
-                                Published with{" "}
-                                <a
-                                    className="site-foot-nav-item"
-                                    href="https://ghost.org"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Ghost
-                                </a>
+                                <Link to="/">{site.title}</Link> © 2019
                             </div>
                             <div className="site-foot-nav-right">
                                 <Navigation
@@ -182,11 +173,11 @@ DefaultLayout.propTypes = {
     isHome: PropTypes.bool,
     data: PropTypes.shape({
         file: PropTypes.object,
-        allGhostSettings: PropTypes.object.isRequired,
-    }).isRequired,
+        allGhostSettings: PropTypes.object.isRequired
+    }).isRequired
 };
 
-const DefaultLayoutSettingsQuery = (props) => (
+const DefaultLayoutSettingsQuery = props => (
     <StaticQuery
         query={graphql`
             query GhostSettings {
@@ -206,7 +197,7 @@ const DefaultLayoutSettingsQuery = (props) => (
                 }
             }
         `}
-        render={(data) => <DefaultLayout data={data} {...props} />}
+        render={data => <DefaultLayout data={data} {...props} />}
     />
 );
 
