@@ -125,7 +125,7 @@ WebsiteMeta.propTypes = {
     type: PropTypes.oneOf([`WebSite`, `Series`]).isRequired,
 };
 
-const WebsiteMetaQuery = (props) => (
+const WebsiteMetaQuery = props => (
     <StaticQuery
         query={graphql`
             query GhostSettingsWebsiteMeta {
@@ -138,7 +138,7 @@ const WebsiteMetaQuery = (props) => (
                 }
             }
         `}
-        render={(data) => <WebsiteMeta settings={data} {...props} />}
+        render={data => <WebsiteMeta settings={data} {...props} />}
     />
 );
 

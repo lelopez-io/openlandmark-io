@@ -42,8 +42,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         className="site-head"
                         style={{
                             ...(site.cover_image && {
-                                backgroundImage: `url(${site.cover_image})`
-                            })
+                                backgroundImage: `url(${site.cover_image})`,
+                            }),
                         }}
                     >
                         <div className="container">
@@ -173,8 +173,8 @@ DefaultLayout.propTypes = {
     isHome: PropTypes.bool,
     data: PropTypes.shape({
         file: PropTypes.object,
-        allGhostSettings: PropTypes.object.isRequired
-    }).isRequired
+        allGhostSettings: PropTypes.object.isRequired,
+    }).isRequired,
 };
 
 const DefaultLayoutSettingsQuery = props => (
