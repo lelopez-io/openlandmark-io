@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-starter-ghost",
-  "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
+  "name": "Openlandmark: Gather Together",
+  "description": "A blog by Luis E. Lopez to help document various topics in software development",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Ghost Foundation",
-  "homepage": "https://docs.ghost.org/api/gatsby/",
+  "author": "Luis E. Lopez",
+  "homepage": "https://openlandmark.io/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
+    "url": "git+https://github.com/lelopez-io/openlandmark-io/"
   },
   "resolutions": {
     "sharp": "0.25.2"
@@ -16,7 +16,7 @@
     "node": ">= 10.13.0"
   },
   "bugs": {
-    "url": "https://github.com/tryghost/gatsby-starter-ghost/issues"
+    "url": "https://github.com/lelopez-io/openlandmark-io/issues"
   },
   "keywords": [
     "gatsby",
