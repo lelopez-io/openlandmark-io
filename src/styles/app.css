@@ -716,8 +716,7 @@ h6 {
 .site-banner-title {
     margin: 0;
     padding: 0;
-    color: #fff;
-    text-shadow: 0 0 3px #005070;
+    color: #005070;
     font-size: 4rem;
     line-height: 1.3em;
 }
