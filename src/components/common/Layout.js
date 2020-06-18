@@ -58,7 +58,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                         className="site-nav-button"
                                         to="/payments"
                                     >
-                                        make a payment
+                                        purchase
                                     </Link>
                                 </div>
                             </div>
