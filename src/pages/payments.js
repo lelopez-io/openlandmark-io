@@ -56,7 +56,7 @@ const PaymentsPage = (data) => {
                                 <div className="purcase-card-content">
                                     <h1>Custom</h1>
                                     <p>
-                                        Feel free to contact us if you project
+                                        Feel free to contact us if your project
                                         requires custom work.
                                     </p>
                                 </div>
