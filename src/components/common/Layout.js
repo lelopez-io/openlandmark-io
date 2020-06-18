@@ -66,7 +66,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 <div className="site-banner">
                                     {site.logo ? (
                                         <img
-                                            className="site-logo"
+                                            className="site-banner-logo"
                                             src={site.logo}
                                             alt={site.title}
                                         />

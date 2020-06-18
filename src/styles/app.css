@@ -714,6 +714,11 @@ h6 {
     text-align: center;
 }
 
+.site-banner-logo {
+    height: 200px;
+    margin-bottom: 2.5vw;
+}
+
 .site-banner-title {
     margin: 0;
     padding: 0;
