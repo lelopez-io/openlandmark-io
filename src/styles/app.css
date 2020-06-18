@@ -688,7 +688,8 @@ h6 {
 }
 
 .site-logo {
-    height: 45px;
+    height: 200px;
+    margin-bottom: 2.5vw;
 }
 
 .site-mast {
@@ -716,9 +717,10 @@ h6 {
 .site-banner-title {
     margin: 0;
     padding: 0;
-    color: #005070;
+    color: var(--color-base);
     font-size: 4rem;
     line-height: 1.3em;
+    /* text-transform: lowercase; */
 }
 
 .site-banner-desc {

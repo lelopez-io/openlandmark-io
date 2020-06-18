@@ -64,12 +64,23 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                             </div>
                             {isHome ? (
                                 <div className="site-banner">
+                                    {site.logo ? (
+                                        <img
+                                            className="site-logo"
+                                            src={site.logo}
+                                            alt={site.title}
+                                        />
+                                    ) : (
+                                        <Img
+                                            fixed={
+                                                data.file.childImageSharp.fixed
+                                            }
+                                            alt={site.title}
+                                        />
+                                    )}
                                     <h1 className="site-banner-title">
                                         {site.title}
                                     </h1>
-                                    <p className="site-banner-desc">
-                                        {site.description}
-                                    </p>
                                 </div>
                             ) : null}
                         </div>
