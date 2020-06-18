@@ -27,7 +27,9 @@ try {
     }
 }
 
-require("dotenv").config();
+require(`dotenv`).config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
 /**
  * This is the place where you can tell Gatsby which plugins to use
  * and set them up the way you want.
