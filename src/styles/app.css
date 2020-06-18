@@ -1164,3 +1164,95 @@ h6 {
 .kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
     margin: -2.25em 0 3em;
 }
+
+/* Custom Page
+/* ---------------------------------------------------------- */
+
+h2.custom-page-h2 {
+    color: var(--color-base);
+    opacity: 0.7;
+    margin: 0.8em 0 0.4em 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    h2.custom-page-h2 {
+        font-size: 1.6rem;
+    }
+}
+
+h3.custom-page-h3 {
+    margin: 0.5em 0 0.2em 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    h3.custom-page-h3 {
+        font-size: 1.2rem;
+    }
+}
+
+.purchase-wrapper {
+    margin-top: 3.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purcase-card {
+    width: 49%;
+
+    background-color: #fff;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.purcase-card-content {
+    padding: 2rem 8rem;
+}
+
+.purcase-card-content img {
+    max-width: 50%;
+    margin-bottom: 1.5em;
+}
+
+.purcase-card-content .pricing {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.purcase-card-content .pricing span {
+    font-size: 2rem;
+}
+
+.purcase-card h1 {
+    font-size: 1.8rem;
+}
+
+.purcase-card button {
+    width: 100%;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 0.75rem 0;
+}
+
+.card-box-shadow {
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.card-dark {
+    background-color: #005070;
+}
+
+.card-dark h1 {
+    color: #fff;
+}
+.card-dark p {
+    color: #ecedef;
+}
+.card-dark button {
+    color: #ecedef;
+    background-color: #007c9d;
+}
