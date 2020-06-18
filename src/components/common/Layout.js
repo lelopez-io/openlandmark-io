@@ -129,12 +129,12 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     /> */}
                                 </div>
                                 <div className="site-nav-right">
-                                    {/* <Link
+                                    <Link
                                         className="site-nav-button"
-                                        to="/about"
+                                        to="/payments"
                                     >
-                                        About openlandmark.io
-                                    </Link> */}
+                                        make a payment
+                                    </Link>
                                 </div>
                             </nav>
                         </div>
