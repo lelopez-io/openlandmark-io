@@ -4,6 +4,7 @@ import { Layout } from "../components/common";
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(process.env.STRIPE_PUB_KEY);
+const simpleHostingPrice = process.env.GATSBY_SIMPLE_HOSTING_PRICE;
 
 const PaymentsPage = (data) => {
     const handleClick = async (event) => {
@@ -12,7 +13,7 @@ const PaymentsPage = (data) => {
         const { error } = await stripe.redirectToCheckout({
             lineItems: [
                 // Replace with the ID of your price
-                { price: `price_1GunH6GTuqmOm7iCSPCok7ph`, quantity: 1 },
+                { price: simpleHostingPrice, quantity: 1 },
             ],
             mode: `subscription`,
             successUrl: `https://openlandmark.io/success`,
