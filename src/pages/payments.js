@@ -41,7 +41,7 @@ const PaymentsPage = (data) => {
                                         A recurring payment for simple web
                                         hosting of a site.
                                     </p>
-                                    <img src="images/cloud.png" />
+                                    <img src="/images/cloud.png" />
                                     <p className="pricing">
                                         $14.99 <span>+ tax</span>
                                     </p>
