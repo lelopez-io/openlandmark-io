@@ -3,7 +3,6 @@ import React from "react";
 import { Layout } from "../components/common";
 import { loadStripe } from "@stripe/stripe-js";
 
-console.log(process.env.GATSBY_STRIPE_PUB_KEY);
 const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUB_KEY);
 const simpleHostingPrice = process.env.GATSBY_SIMPLE_HOSTING_PRICE;
 
