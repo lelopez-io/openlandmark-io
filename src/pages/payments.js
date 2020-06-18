@@ -61,7 +61,14 @@ const PaymentsPage = (data) => {
                                     </p>
                                 </div>
 
-                                <button role="link">Email</button>
+                                <button
+                                    role="link"
+                                    onClick={() =>
+                                        (location.href = `mailto:ux@lelopez.io`)
+                                    }
+                                >
+                                    Email
+                                </button>
                             </div>
                         </div>
                     </section>
