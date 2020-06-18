@@ -1201,8 +1201,7 @@ h3.custom-page-h3 {
 }
 
 .purcase-card {
-    width: 47%;
-    min-width: 400px;
+    width: 100%;
     max-width: 100%;
     margin: 0 auto 20px;
 
@@ -1210,6 +1209,30 @@ h3.custom-page-h3 {
     border-radius: 4px;
     z-index: 10;
 }
+
+/* @media only screen and (min-width: 576px) {
+    .purcase-card {
+        width: 100%;
+    }
+} */
+
+@media only screen and (min-width: 768px) {
+    .purcase-card {
+        width: 47%;
+    }
+}
+
+/* @media only screen and (min-width: 992px) {
+    .purcase-card {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .purcase-card {
+        width: 100%;
+    }
+} */
 
 .purcase-card-content {
     padding: 2rem 8rem;
