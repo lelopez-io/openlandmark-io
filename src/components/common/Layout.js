@@ -49,66 +49,18 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         <div className="container">
                             <div className="site-mast">
                                 <div className="site-mast-left">
-                                    <Link to="/">
-                                        {site.logo ? (
-                                            <img
-                                                className="site-logo"
-                                                src={site.logo}
-                                                alt={site.title}
-                                            />
-                                        ) : (
-                                            <Img
-                                                fixed={
-                                                    data.file.childImageSharp
-                                                        .fixed
-                                                }
-                                                alt={site.title}
-                                            />
-                                        )}
+                                    <Link className="site-nav-item" to="/">
+                                        home
                                     </Link>
                                 </div>
-                                {/* <div className="site-mast-right">
-                                    {site.twitter && (
-                                        <a
-                                            href={twitterUrl}
-                                            className="site-nav-item"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <img
-                                                className="site-nav-icon"
-                                                src="/images/icons/twitter.svg"
-                                                alt="Twitter"
-                                            />
-                                        </a>
-                                    )}
-                                    {site.facebook && (
-                                        <a
-                                            href={facebookUrl}
-                                            className="site-nav-item"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <img
-                                                className="site-nav-icon"
-                                                src="/images/icons/facebook.svg"
-                                                alt="Facebook"
-                                            />
-                                        </a>
-                                    )}
-                                    <a
-                                        className="site-nav-item"
-                                        href={`https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                <div className="site-mast-right">
+                                    <Link
+                                        className="site-nav-button"
+                                        to="/payments"
                                     >
-                                        <img
-                                            className="site-nav-icon"
-                                            src="/images/icons/rss.svg"
-                                            alt="RSS Feed"
-                                        />
-                                    </a>
-                                </div> */}
+                                        make a payment
+                                    </Link>
+                                </div>
                             </div>
                             {isHome ? (
                                 <div className="site-banner">
@@ -120,23 +72,6 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     </p>
                                 </div>
                             ) : null}
-                            <nav className="site-nav">
-                                <div className="site-nav-left">
-                                    {/* The navigation items as setup in Ghost */}
-                                    {/* <Navigation
-                                        data={site.navigation}
-                                        navClass="site-nav-item"
-                                    /> */}
-                                </div>
-                                <div className="site-nav-right">
-                                    <Link
-                                        className="site-nav-button"
-                                        to="/payments"
-                                    >
-                                        make a payment
-                                    </Link>
-                                </div>
-                            </nav>
                         </div>
                     </header>
 
