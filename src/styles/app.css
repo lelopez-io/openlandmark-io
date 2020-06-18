@@ -1197,10 +1197,13 @@ h3.custom-page-h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .purcase-card {
-    width: 49%;
+    width: 47%;
+    min-width: 400px;
+    margin: 0 auto 20px;
 
     background-color: #fff;
     border-radius: 4px;
