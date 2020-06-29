@@ -56,9 +56,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 <div className="site-mast-right">
                                     <Link
                                         className="site-nav-button"
-                                        to="/payments"
+                                        to="/shop"
                                     >
-                                        purchase
+                                        shop
                                     </Link>
                                 </div>
                             </div>
