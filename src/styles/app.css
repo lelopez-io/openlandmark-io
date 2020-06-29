@@ -1192,7 +1192,7 @@ h3.custom-page-h3 {
     }
 }
 
-.purchase-wrapper {
+.shop-wrapper {
     margin-top: 3.8rem;
     display: flex;
     justify-content: space-between;
@@ -1200,7 +1200,7 @@ h3.custom-page-h3 {
     flex-wrap: wrap;
 }
 
-.purcase-card {
+.purchase-card {
     width: 100%;
     max-width: 100%;
     margin: 0 auto 20px;
@@ -1211,57 +1211,82 @@ h3.custom-page-h3 {
 }
 
 /* @media only screen and (min-width: 576px) {
-    .purcase-card {
+    .purchase-card {
         width: 100%;
     }
 } */
 
 @media only screen and (min-width: 768px) {
-    .purcase-card {
+    .purchase-card {
         width: 47%;
     }
 }
 
 /* @media only screen and (min-width: 992px) {
-    .purcase-card {
+    .purchase-card {
         width: 100%;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    .purcase-card {
+    .purchase-card {
         width: 100%;
     }
 } */
 
-.purcase-card-content {
+.purchase-card-content {
     padding: 2rem 8rem;
 }
 
-.purcase-card-content img {
+.purchase-card-content img {
     max-width: 50%;
     margin-bottom: 1.5em;
 }
 
-.purcase-card-content .pricing {
+.purchase-card-content .pricing {
     font-size: 3rem;
     margin: 0;
 }
 
-.purcase-card-content .pricing span {
+.purchase-card-content .pricing span {
     font-size: 2rem;
 }
 
-.purcase-card h1 {
+.purchase-card h1 {
     font-size: 1.8rem;
 }
 
-.purcase-card button {
+.purchase-card button {
     width: 100%;
     border-radius: 4px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     padding: 0.75rem 0;
+    background-color: #343434;
+    color: #fff;
+}
+
+.pricing-info {
+    position: relative;
+    display: inline-block;
+}
+
+.pricing-breakdown {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: 220px;
+    background-color: #343434;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -110px;
 }
 
 .card-box-shadow {
