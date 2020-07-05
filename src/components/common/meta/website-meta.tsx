@@ -5,8 +5,8 @@ import _ from "lodash";
 import { StaticQuery, graphql } from "gatsby";
 import url from "url";
 
-import ImageMeta from "./ImageMeta";
-import config from "../../../utils/siteConfig";
+import ImageMeta from "./image-meta";
+import config from "../../../utils/site-config";
 
 const WebsiteMeta = ({
     data,
@@ -125,7 +125,7 @@ WebsiteMeta.propTypes = {
     type: PropTypes.oneOf([`WebSite`, `Series`]).isRequired,
 };
 
-const WebsiteMetaQuery = props => (
+const WebsiteMetaQuery = (props) => (
     <StaticQuery
         query={graphql`
             query GhostSettingsWebsiteMeta {
@@ -138,7 +138,7 @@ const WebsiteMetaQuery = props => (
                 }
             }
         `}
-        render={data => <WebsiteMeta settings={data} {...props} />}
+        render={(data) => <WebsiteMeta settings={data} {...props} />}
     />
 );
 

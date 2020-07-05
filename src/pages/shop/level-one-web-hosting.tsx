@@ -2,7 +2,7 @@ import React from "react";
 
 import { Layout } from "../../components/common";
 
-import L1WebHosting from "../../components/shop/L1WebHosting";
+import L1WebHosting from "../../components/shop/l1-web-hosting";
 
 const L1WebHostingPage = (data) => (
     <Layout>

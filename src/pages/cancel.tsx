@@ -10,7 +10,7 @@ const PaymentsPage = (data) => (
                 <section className="content-body">
                     <h1>Looks like you canceled your purchase.</h1>
                     <h2 className="custom-page-h2">
-                        To try again click <Link to="/payments">here</Link>.
+                        To try again click <Link to="/shop">here</Link>.
                     </h2>
                 </section>
             </article>

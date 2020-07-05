@@ -3,9 +3,9 @@ import React from "react";
 import { Layout } from "../../components/common";
 import { loadStripe } from "@stripe/stripe-js";
 
-import L1WebHosting from "../../components/shop/L1WebHosting";
-import L1WebSupport from "../../components/shop/L1WebSupport";
-import CustomProject from "../../components/shop/CustomProject";
+import L1WebHosting from "../../components/shop/l1-web-hosting";
+import L1WebSupport from "../../components/shop/l1-web-support";
+import CustomProject from "../../components/shop/custom-project";
 
 const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUB_KEY);
 const simpleHostingPrice = process.env.GATSBY_SIMPLE_HOSTING_PRICE;

@@ -5,7 +5,7 @@ import { Link, StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
 import { Navigation } from ".";
-import config from "../../utils/siteConfig";
+import config from "../../utils/site-config";
 
 // Styles
 import "../../styles/app.css";

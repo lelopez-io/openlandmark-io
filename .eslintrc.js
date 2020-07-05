@@ -1,13 +1,25 @@
 module.exports = {
-    parser: "babel-eslint",
+    parser: "@typescript-eslint/parser", // Specifies the ESLint parser
+    extends: [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended",
+    ],
+    env: {
+        browser: true,
+        node: true,
+        es6: true,
+    },
     parserOptions: {
-        ecmaVersion: 6,
         ecmaFeatures: {
             jsx: true,
-            experimentalObjectRestSpread: true,
         },
+        ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
+        sourceType: "module", // Allows for the use of imports
     },
-    plugins: ["ghost", "react"],
+    plugins: ["ghost", "react", "@typescript-eslint"],
     extends: [
         "plugin:ghost/node",
         "plugin:ghost/ember",
@@ -49,11 +61,16 @@ module.exports = {
                 functions: "ignore",
             },
         ],
-        "react/prop-types": [
-            "error",
-            {
-                ignore: ["children"],
-            },
-        ],
+        "react/prop-types": "off", // Disable prop-types as we use TypeScript for type checking
+        "@typescript-eslint/explicit-function-return-type": "off",
     },
+    overrides: [
+        // Override some TypeScript rules just for .js files
+        {
+            files: ["*.js"],
+            rules: {
+                "@typescript-eslint/no-var-requires": "off", //
+            },
+        },
+    ],
 };

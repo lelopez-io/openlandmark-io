@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 import _ from "lodash";
 import url from "url";
 
-import getAuthorProperties from "./getAuthorProperties";
-import ImageMeta from "./ImageMeta";
-import config from "../../../utils/siteConfig";
+import getAuthorProperties from "./get-author-properties";
+import ImageMeta from "./image-meta";
+import config from "../../../utils/site-config";
 
 import { tags as tagsHelper } from "@tryghost/helpers";
 
@@ -17,7 +17,7 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
 
     const author = getAuthorProperties(ghostPost.primary_author);
     const publicTags = _.map(
-        tagsHelper(ghostPost, { visibility: `public`, fn: tag => tag }),
+        tagsHelper(ghostPost, { visibility: `public`, fn: (tag) => tag }),
         `name`
     );
     const primaryTag = publicTags[0] || ``;
@@ -196,7 +196,7 @@ ArticleMetaGhost.propTypes = {
     canonical: PropTypes.string.isRequired,
 };
 
-const ArticleMetaQuery = props => (
+const ArticleMetaQuery = (props) => (
     <StaticQuery
         query={graphql`
             query GhostSettingsArticleMeta {
@@ -209,7 +209,7 @@ const ArticleMetaQuery = props => (
                 }
             }
         `}
-        render={data => <ArticleMetaGhost settings={data} {...props} />}
+        render={(data) => <ArticleMetaGhost settings={data} {...props} />}
     />
 );
 

@@ -1,6 +1,6 @@
 const path = require(`path`);
 
-const config = require(`./src/utils/siteConfig`);
+const config = require(`./src/utils/site-config`);
 const generateRSSFeed = require(`./src/utils/rss/generate-feed`);
 
 let ghostConfig;
@@ -200,5 +200,6 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
+        `gatsby-plugin-typescript`,
     ],
 };

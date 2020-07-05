@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import _ from "lodash";
 import { StaticQuery, graphql } from "gatsby";
 
-import ImageMeta from "./ImageMeta";
-import getAuthorProperties from "./getAuthorProperties";
-import config from "../../../utils/siteConfig";
+import ImageMeta from "./image-meta";
+import getAuthorProperties from "./get-author-properties";
+import config from "../../../utils/site-config";
 
 const AuthorMeta = ({ data, settings, canonical }) => {
     settings = settings.allGhostSettings.edges[0].node;
@@ -91,7 +91,7 @@ AuthorMeta.propTypes = {
     canonical: PropTypes.string.isRequired,
 };
 
-const AuthorMetaQuery = props => (
+const AuthorMetaQuery = (props) => (
     <StaticQuery
         query={graphql`
             query GhostSettingsAuthorMeta {
@@ -104,7 +104,7 @@ const AuthorMetaQuery = props => (
                 }
             }
         `}
-        render={data => <AuthorMeta settings={data} {...props} />}
+        render={(data) => <AuthorMeta settings={data} {...props} />}
     />
 );
 

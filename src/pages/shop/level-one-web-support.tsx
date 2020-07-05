@@ -2,7 +2,7 @@ import React from "react";
 
 import { Layout } from "../../components/common";
 
-import L1WebSupport from "../../components/shop/L1WebSupport";
+import L1WebSupport from "../../components/shop/l1-web-support";
 
 const PaymentsPage = (data) => (
     <Layout>
