@@ -72,6 +72,13 @@ module.exports = {
                 name: `images`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: path.join(__dirname, `src`, `images`, `product`),
+                name: `product`,
+            },
+        },
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         {
@@ -201,5 +208,6 @@ module.exports = {
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-typescript`,
+        `gatsby-plugin-sass`,
     ],
 };
