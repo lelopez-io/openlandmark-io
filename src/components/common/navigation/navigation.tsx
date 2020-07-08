@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 
 import { Link } from "gatsby";
 
@@ -96,14 +97,17 @@ export default class Navigation extends Component {
                     </Brand>
 
                     <ActionsContainer>
-                        <Link to="/sign-up">
-                            <button className="button is-primary">
-                                Sign Up
-                            </button>
-                        </Link>
+                        <StyledLink className="button is-primary" to="/sign-up">
+                            Sign Up
+                        </StyledLink>
                     </ActionsContainer>
                 </StyledContainer>
             </Nav>
         );
     }
 }
+
+const StyledLink = styled(Link)`
+    text-transform: uppercase;
+    font-size: 12px;
+`;
