@@ -1,0 +1,9 @@
+[data-icon]:before {
+    //fixes a line that is left above icon in safari
+    border: 3px solid white;
+
+    font-size: 60px;
+    font-family: elegantIons; /* BYO icon font, mapped smartly */
+    content: attr(data-icon);
+    speak: none; /* Not to be trusted, but hey. */
+}

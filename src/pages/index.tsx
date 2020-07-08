@@ -1,23 +1,21 @@
 import React from "react";
 
 import Layout from "../components/common/layout/layout";
-// import SEO from "../components/common/layout/seo";
-// import WebsiteMeta from "..";
 import Navigation from "../components/common/navigation/navigation";
+import Footer from "../components/sections/footer";
 
 import Header from "../components/sections/header";
-import Features from "../components/sections/features";
-import Footer from "../components/sections/footer";
+import Objectives from "../components/sections/objectives";
 import GetStarted from "../components/sections/get-started";
 
-import "../styles/app.scss";
+import "../assets/scss/main.scss";
 
 const IndexPage = () => (
     <Layout>
         {/* <SEO title="Home" /> */}
         <Navigation />
         <Header />
-        <Features />
+        <Objectives />
         <GetStarted />
         <Footer />
     </Layout>

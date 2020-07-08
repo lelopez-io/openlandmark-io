@@ -17,11 +17,10 @@ const Footer = () => {
         }
     `);
     const site = data.allGhostSettings.edges[0].node;
-    console.log(site.title);
 
     return (
         <FooterWrapper id="footer">
-            <FooterColumnContainer>
+            {/* <FooterColumnContainer>
                 <FooterColumn>
                     <span>Features</span>
                     <ul>
@@ -50,7 +49,7 @@ const Footer = () => {
                         <li>Instagram</li>
                     </ul>
                 </FooterColumn>
-            </FooterColumnContainer>
+            </FooterColumnContainer> */}
             <BrandContainer>
                 <Link className="is-link" to="/">
                     {site.title}
@@ -64,7 +63,7 @@ const Footer = () => {
 
 const FooterWrapper = styled.footer`
     background-color: white;
-    margin: 80px 0 0;
+    margin: 20px 0 0;
     padding: 0 0 80px;
 `;
 

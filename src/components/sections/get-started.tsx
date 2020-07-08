@@ -6,9 +6,14 @@ import { Container, Section } from "../global";
 const GetStarted = () => (
     <StyledSection>
         <GetStartedContainer>
-            <GetStartedTitle>Be the first to get the beta</GetStartedTitle>
-            <TryItButton>Get early access</TryItButton>
-            <Subtitle>No credit card required.</Subtitle>
+            <GetStartedTitle>Have any question?</GetStartedTitle>
+            <TryItButton
+                className="button is-primary"
+                onClick={() => (location.href = `mailto:ux@lelopez.io`)}
+            >
+                Get in touch today
+            </TryItButton>
+            <Subtitle>Free initial consultation</Subtitle>
         </GetStartedContainer>
     </StyledSection>
 );
@@ -18,6 +23,7 @@ export default GetStarted;
 const StyledSection = styled(Section)`
     background-color: ${(props) => props.theme.color.background.light};
     clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
+    padding-bottom: 120px;
 `;
 
 const GetStartedContainer = styled(Container)`

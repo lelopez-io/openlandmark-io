@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Layout } from "../components/common";
+import { Layout } from "../components/common/ghost";
 import { Link } from "gatsby";
 
 const PaymentsPage = (data) => (

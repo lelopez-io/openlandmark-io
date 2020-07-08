@@ -21,47 +21,12 @@ const Header = ({ data }) => {
                     backgroundImage: `url(${site.cover_image})`,
                     backgroundRepeat: `no-repeat`,
                     backgroundSize: `cover`,
-                    backgroundPosition: `center top`,
+                    backgroundPosition: `center `,
                 }),
             }}
         >
             <Container>
-                <Flex>
-                    <HeaderTextGroup>
-                        <Subtitle>Become Global</Subtitle>
-                        <h1 className="title is-primary is-1">
-                            Build with Trusted Infrastructure <br />
-                        </h1>
-                        <h2>
-                            We're creating the next generation of successful
-                            businesses one launch at a time
-                        </h2>
-                        {/* <HeaderForm onSubmit={handleSubmit}>
-                            <HeaderInput placeholder="Your email" />
-                            <HeaderButton>Early access</HeaderButton>
-                        </HeaderForm>
-                        <FormSubtitle>
-                            Already have a beta account?{` `}
-                            <FormSubtitleLink to="/">Sign in</FormSubtitleLink>
-                        </FormSubtitle> */}
-                    </HeaderTextGroup>
-                    <ImageWrapper>
-                        {site.logo ? (
-                            <img
-                                className="site-banner-logo"
-                                src={site.logo}
-                                alt={site.title}
-                            />
-                        ) : (
-                            <StyledImage
-                                fluid={data.file.childImageSharp.fluid}
-                                alt={site.title}
-                            />
-                        )}
-
-                        <br />
-                    </ImageWrapper>
-                </Flex>
+                <Flex></Flex>
             </Container>
         </HeaderWrapper>
     );

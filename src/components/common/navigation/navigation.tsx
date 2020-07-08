@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+
+import { Link } from "gatsby";
+
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Scrollspy from "react-scrollspy";
 import { Menu, X } from "react-feather";
@@ -15,7 +18,7 @@ import {
     ActionsContainer,
 } from "./style";
 
-const NAV_ITEMS = [`Features`, `Product`, `Pricing`, ``];
+const NAV_ITEMS = [``];
 
 export default class Navigation extends Component {
     state = {
@@ -82,46 +85,24 @@ export default class Navigation extends Component {
             <Nav {...this.props} scrolled={this.state.hasScrolled}>
                 <StyledContainer>
                     <Brand>
-                        <Scrollspy
-                            offset={-64}
-                            item={[`top`]}
-                            currentClassName="active"
+                        <Link
+                            className="has-text-primary-dark"
+                            to="/"
+                            onClick={this.closeMobileMenu}
+                            style={{ textDecoration: `none` }}
                         >
-                            <AnchorLink
-                                href="#top"
-                                onClick={this.closeMobileMenu}
-                            >
-                                Openlandmark
-                            </AnchorLink>
-                        </Scrollspy>
+                            Openlandmark
+                        </Link>
                     </Brand>
-                    <Mobile>
-                        <button
-                            onClick={this.toggleMobileMenu}
-                            style={{ color: `black`, background: `none` }}
-                        >
-                            {this.state.mobileMenuOpen ? (
-                                <X size={24} alt="close menu" />
-                            ) : (
-                                <Menu size={24} alt="open menu" />
-                            )}
-                        </button>
-                    </Mobile>
 
-                    <Mobile hide>{this.getNavList({})}</Mobile>
                     <ActionsContainer>
-                        <button>Sign Up</button>
+                        <Link to="/sign-up">
+                            <button className="button is-primary">
+                                Sign Up
+                            </button>
+                        </Link>
                     </ActionsContainer>
                 </StyledContainer>
-                <Mobile>
-                    {mobileMenuOpen && (
-                        <MobileMenu>
-                            <Container>
-                                {this.getNavList({ mobile: true })}
-                            </Container>
-                        </MobileMenu>
-                    )}
-                </Mobile>
             </Nav>
         );
     }

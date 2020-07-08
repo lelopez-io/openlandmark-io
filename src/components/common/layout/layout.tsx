@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 import theme from "../../../styles/theme";
 import GlobalStyles from "../../../styles/global-styles";
-import "../../../static/fonts/fonts.css";
+import "../../../assets/fonts/fonts.css";
 
 const Layout = ({ children }) => (
     <ThemeProvider theme={theme}>

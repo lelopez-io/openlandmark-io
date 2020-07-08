@@ -1,17 +1,17 @@
 import React from "react";
 
-import { Layout } from "../components/common/ghost";
-import { Link } from "gatsby";
+import { Layout } from "../../components/common/ghost";
+
+import L1WebSupport from "../../components/shop/l1-web-support";
 
 const PaymentsPage = (data) => (
     <Layout>
         <div className="container">
             <article className="content" style={{ textAlign: `center` }}>
                 <section className="content-body">
-                    <h1>Looks like you canceled your purchase.</h1>
-                    <h2 className="custom-page-h2">
-                        To try again click <Link to="/shop">here</Link>.
-                    </h2>
+                    <div className="shop-wrapper">
+                        <L1WebSupport />
+                    </div>
                 </section>
             </article>
         </div>
