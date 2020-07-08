@@ -33,7 +33,7 @@ const L1WebSupport = (data) => {
                 <p>
                     A recurring payment for web support of an E-Commerce website
                 </p>
-                <Link className="" to="/shop/level-one-web-support">
+                <Link className="" to="/sign-up/level-one-web-support">
                     <img src="/images/code.png" />
                 </Link>
 

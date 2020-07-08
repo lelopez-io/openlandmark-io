@@ -1193,11 +1193,7 @@ h3.custom-page-h3 {
 }
 
 .shop-wrapper {
-    margin-top: 3.8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    margin-top: 3rem;
 }
 
 .purchase-card {
@@ -1235,21 +1231,27 @@ h3.custom-page-h3 {
 } */
 
 .purchase-card-content {
-    padding: 2rem 8rem;
+    margin-top: 3rem;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .purchase-card-content img {
     max-width: 50%;
-    margin-bottom: 1.5em;
+    margin: 1.5em 0;
 }
 
 .purchase-card-content .pricing {
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
 }
 
 .purchase-card-content .pricing span {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .purchase-card h1 {
@@ -1272,8 +1274,8 @@ h3.custom-page-h3 {
 }
 
 .pricing-breakdown {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
     width: 220px;
     background-color: #343434;
     color: #fff;

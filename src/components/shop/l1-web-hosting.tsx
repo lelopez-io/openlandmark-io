@@ -31,7 +31,7 @@ const L1WebHosting = (data) => {
             <div className="purchase-card-content">
                 <h1>Level 1: Web Hosting</h1>
                 <p>A recurring payment for simple web hosting of a site.</p>
-                <Link className="" to="/shop/level-one-web-hosting">
+                <Link className="" to="/sign-up/level-one-web-hosting">
                     <img src="/images/cloud.png" />
                 </Link>
 

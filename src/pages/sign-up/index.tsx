@@ -12,37 +12,44 @@ import L1WebHosting from "../../components/shop/l1-web-hosting";
 import L1WebSupport from "../../components/shop/l1-web-support";
 import CustomProject from "../../components/shop/custom-project";
 
+import GetStarted from "../../components/sections/get-started";
+
 const ShopIndexPage = () => (
     <Layout>
         {/* <SEO title="Home" /> */}
         <Navigation />
-        <Header />
-        <Section>
+        {/* <Header /> */}
+        <StyledSection>
             <Container>
-                <Subtitle>Service Selection</Subtitle>
-                <SectionTitle>Services for growing businesses</SectionTitle>
+                <Subtitle>Become Global</Subtitle>
+                <SectionTitle className="title is-primary is-1">
+                    Build with Trusted Infrastructure
+                </SectionTitle>
 
-                <h2 className="title is-primary is-1">
-                    Trusted infrastructure extended to meet your needs.
-                </h2>
-                <div className="shop-wrapper">
+                <ShopWrapper>
                     <L1WebHosting />
                     <L1WebSupport />
-                    <CustomProject />
-                </div>
+                </ShopWrapper>
             </Container>
-        </Section>
+        </StyledSection>
+        <GetStarted />
         <Footer />
     </Layout>
 );
 
 export default ShopIndexPage;
 
-const SectionTitle = styled.h3`
-    color: ${(props) => props.theme.color.primary};
+const StyledSection = styled(Section)`
+    padding-top: 160px;
+`;
+
+const ShopWrapper = styled.div`
+    margin-top: 6rem;
+`;
+
+const SectionTitle = styled.h1`
     display: flex;
     justify-content: center;
-    margin: 0 auto 40px;
     text-align: center;
 `;
 

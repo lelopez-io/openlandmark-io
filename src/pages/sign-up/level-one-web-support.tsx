@@ -1,21 +1,36 @@
 import React from "react";
+import styled from "styled-components";
 
-import { Layout } from "../../components/common/ghost";
+import { Section, Container } from "../../components/global";
+
+import Layout from "../../components/common/layout/layout";
+import Navigation from "../../components/common/navigation/navigation";
+import Footer from "../../components/sections/footer";
 
 import L1WebSupport from "../../components/shop/l1-web-support";
 
-const PaymentsPage = (data) => (
+const ShopIndexPage = () => (
     <Layout>
-        <div className="container">
-            <article className="content" style={{ textAlign: `center` }}>
-                <section className="content-body">
-                    <div className="shop-wrapper">
-                        <L1WebSupport />
-                    </div>
-                </section>
-            </article>
-        </div>
+        {/* <SEO title="Home" /> */}
+        <Navigation />
+
+        <StyledSection>
+            <Container>
+                <ShopWrapper>
+                    <L1WebSupport />
+                </ShopWrapper>
+            </Container>
+        </StyledSection>
+        <Footer />
     </Layout>
 );
 
-export default PaymentsPage;
+export default ShopIndexPage;
+
+const StyledSection = styled(Section)`
+    padding-top: 160px;
+`;
+
+const ShopWrapper = styled.div`
+    margin-top: 6rem;
+`;
