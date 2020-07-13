@@ -21,7 +21,7 @@ const PostCard = ({ post }) => {
                 )}
                 {post.tags && (
                     <div className="post-card-tags">
-                        {" "}
+                        {` `}
                         <Tags
                             post={post}
                             visibility="public"
@@ -30,7 +30,7 @@ const PostCard = ({ post }) => {
                     </div>
                 )}
                 {post.featured && <span>Featured</span>}
-                <h2 className="post-card-title">{post.title}</h2>
+                <h2 className="post-card-title title is-4">{post.title}</h2>
             </header>
             <section className="post-card-excerpt">{post.excerpt}</section>
             <footer className="post-card-footer">
