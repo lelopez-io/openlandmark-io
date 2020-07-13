@@ -6,7 +6,6 @@ import { Section, Container } from "../../components/global";
 import Layout from "../../components/common/layout/layout";
 import Navigation from "../../components/common/navigation/navigation";
 import Footer from "../../components/sections/footer";
-import Header from "../../components/sections/header-small";
 
 import L1WebHosting from "../../components/shop/l1-web-hosting";
 import L1WebSupport from "../../components/shop/l1-web-support";
