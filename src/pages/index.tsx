@@ -8,8 +8,6 @@ import Header from "../components/sections/header";
 import Objectives from "../components/sections/objectives";
 import GetStarted from "../components/sections/get-started";
 
-import "../assets/scss/main.scss";
-
 const IndexPage = () => (
     <Layout>
         {/* <SEO title="Home" /> */}

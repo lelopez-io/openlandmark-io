@@ -18,6 +18,7 @@ import GlobalStyles from "../../../styles/global-styles";
 
 // Styles - for Ghost pages
 import "../../../assets/css/app.css";
+import "../../../assets/scss/main.scss";
 
 /**
  * Main layout component
