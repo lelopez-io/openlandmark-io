@@ -59,6 +59,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const posts = result.data.allGhostPost.edges;
 
     // Load templates
+    const blogTemplate = path.resolve(`./src/templates/blog.tsx`);
     const tagsTemplate = path.resolve(`./src/templates/tag.tsx`);
     const authorTemplate = path.resolve(`./src/templates/author.tsx`);
     const pageTemplate = path.resolve(`./src/templates/page.tsx`);
@@ -182,5 +183,20 @@ exports.createPages = async ({ graphql, actions }) => {
                 slug: node.slug,
             },
         });
+    });
+
+    // Create pagination
+    paginate({
+        createPage,
+        items: posts,
+        itemsPerPage: postsPerPage,
+        component: blogTemplate,
+        pathPrefix: ({ pageNumber }) => {
+            if (pageNumber === 0) {
+                return `/blog`;
+            } else {
+                return `/blog/page`;
+            }
+        },
     });
 };
