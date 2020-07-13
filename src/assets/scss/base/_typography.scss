@@ -136,7 +136,6 @@ blockquote {
 
 code {
     border-radius: _size(border-radius);
-    border: solid 1px;
     font-family: _font(family-fixed);
     font-size: 0.9em;
     margin: 0 0.25em;
@@ -217,7 +216,6 @@ hr {
 
     code {
         background: _palette($p, border-bg);
-        border-color: _palette($p, border);
     }
 
     hr {
