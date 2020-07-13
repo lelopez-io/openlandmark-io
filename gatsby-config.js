@@ -215,5 +215,11 @@ module.exports = {
         `gatsby-plugin-offline`,
         `gatsby-plugin-typescript`,
         `gatsby-plugin-sass`,
+        {
+            resolve: `gatsby-plugin-styled-components`,
+            options: {
+                // Add any options here
+            },
+        },
     ],
 };
