@@ -1,4 +1,7 @@
 const path = require(`path`);
+require(`dotenv`).config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
 
 const config = require(`./src/utils/site-config`);
 const generateRSSFeed = require(`./src/utils/rss/generate-feed`);
@@ -27,9 +30,6 @@ try {
     }
 }
 
-require(`dotenv`).config({
-    path: `.env.${process.env.NODE_ENV}`,
-});
 /**
  * This is the place where you can tell Gatsby which plugins to use
  * and set them up the way you want.
