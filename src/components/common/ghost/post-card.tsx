@@ -5,6 +5,9 @@ import { Tags } from "@tryghost/helpers-gatsby";
 import { readingTime as readingTimeHelper } from "@tryghost/helpers";
 
 const PostCard = ({ post }) => {
+    if (post.slug === `data-schema`) {
+        return null;
+    }
     const url = `/${post.slug}/`;
     const readingTime = readingTimeHelper(post);
 
