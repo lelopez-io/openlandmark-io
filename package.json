@@ -36,7 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "babel-eslint": "10.1.0",
-    "eslint": "^7.4.0",
+    "eslint": "^6.0.0",
     "eslint-plugin-ghost": "1.3.0",
     "eslint-plugin-react": "7.19.0",
     "typescript": "^3.9.6"
@@ -45,9 +45,12 @@
     "@stripe/stripe-js": "^1.7.0",
     "@tryghost/helpers": "1.1.27",
     "@tryghost/helpers-gatsby": "1.0.31",
+    "@types/react": "^16.0.0",
     "@types/react-helmet": "^6.0.0",
     "@types/styled-components": "^5.1.0",
+    "@types/webpack": "4.x",
     "babel-plugin-styled-components": "^1.10.7",
+    "bufferutil": "^4.0.1",
     "bulma": "^0.9.0",
     "cheerio": "1.0.0-rc.3",
     "dotenv": "^8.2.0",
@@ -78,7 +81,13 @@
     "react-dom": "16.13.1",
     "react-feather": "^2.0.8",
     "react-helmet": "5.2.1",
+    "react-is": "^16.13.1",
     "react-scrollspy": "^3.4.2",
-    "styled-components": "^5.1.1"
+    "sockjs-client": "^1.4.0",
+    "styled-components": "^5.1.1",
+    "type-fest": "^0.13.1",
+    "utf-8-validate": "^5.0.2",
+    "webpack": "^4.0.0",
+    "webpack-plugin-serve": "1.x"
   }
 }
