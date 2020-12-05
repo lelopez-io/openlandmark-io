@@ -6,6 +6,7 @@ import Footer from "../components/sections/footer";
 
 import Header from "../components/sections/header";
 import Objectives from "../components/sections/objectives";
+import ClientCatalog from '../components/sections/client-catalog'
 import GetStarted from "../components/sections/get-started";
 
 const IndexPage = () => (
@@ -14,6 +15,7 @@ const IndexPage = () => (
         <Navigation />
         <Header />
         <Objectives />
+        <ClientCatalog />
         <GetStarted />
         <Footer />
     </Layout>
