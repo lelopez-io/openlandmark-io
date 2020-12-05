@@ -4,88 +4,81 @@ import styled from "styled-components";
 import { Section, Container } from "../global";
 
 type Client = {
-    name: string,
-    target_link: string,
-    img_src: string
-}
-type Clients = Array<Client>
+    name: string;
+    target_link: string;
+    img_src: string;
+};
+type Clients = Array<Client>;
 
 const clients: Clients = [
     {
-        name: 'jumpgodathletic',
-        target_link: 'https://jumpgodathletic.com/',
-        img_src: '/images/clients/jumpgodathletic.png',
+        name: "jumpgodathletic",
+        target_link: "https://jumpgodathletic.com/",
+        img_src: "/images/clients/jumpgodathletic.png",
     },
     {
-        name: 'powa',
-        target_link: 'https://powa.sphere.club/',
-        img_src: '/images/clients/powa.png',
+        name: "powa",
+        target_link: "https://powa.sphere.club/",
+        img_src: "/images/clients/powa.png",
     },
     {
-        name: 'sphere',
-        target_link: 'https://shop.sphere.club/',
-        img_src: '/images/clients/sphere.png',
+        name: "sphere",
+        target_link: "https://shop.sphere.club/",
+        img_src: "/images/clients/sphere.png",
     },
     {
-        name: 'inaka',
-        target_link: 'https://inakapower.com/',
-        img_src: '/images/clients/inakapower.png',
+        name: "inaka",
+        target_link: "https://inakapower.com/",
+        img_src: "/images/clients/inakapower.png",
     },
     {
-        name: 'shawleycoker',
-        target_link: 'https://shawleycoker.com/',
-        img_src: '/images/clients/shawleycoker.png',
+        name: "shawleycoker",
+        target_link: "https://shawleycoker.com/",
+        img_src: "/images/clients/shawleycoker.png",
     },
     {
-        name: 'cyberxfitness',
-        target_link: 'https://cyberxfitness.com/',
-        img_src: '/images/clients/cyberxfitness.png',
+        name: "cyberxfitness",
+        target_link: "https://cyberxfitness.com/",
+        img_src: "/images/clients/cyberxfitness.png",
     },
     {
-        name: 'speedlionathletics',
-        target_link: 'https://speedlionathletics.com/',
-        img_src: '/images/clients/speedlionathletics.png',
+        name: "speedlionathletics",
+        target_link: "https://speedlionathletics.com/",
+        img_src: "/images/clients/speedlionathletics.png",
     },
     {
-        name: 'rmfash',
-        target_link: 'https://rmfash.com/',
-        img_src: '/images/clients/rmfash.png',
+        name: "rmfash",
+        target_link: "https://rmfash.com/",
+        img_src: "/images/clients/rmfash.png",
     },
     {
-        name: 'jennymlashes',
-        target_link: 'https://jennymlashes.com/',
-        img_src: '/images/clients/jennymlashes.png',
+        name: "jennymlashes",
+        target_link: "https://jennymlashes.com/",
+        img_src: "/images/clients/jennymlashes.png",
     },
 ];
 
 const ClientCatalog = () => {
-   
-    const logo_opacity = .7
+    const logo_opacity = 0.7;
     const clients_shuffle = clients.sort(() => Math.random() - 0.5);
 
-
-
     const clientCatalog = clients_shuffle.map(function (client, index) {
-        const is_last = index + 1 === clients_shuffle.length
-        const is_odd = ((index + 1) % 2) > 0
+        const is_last = index + 1 === clients_shuffle.length;
+        const is_odd = (index + 1) % 2 > 0;
 
-
-        console.log(index)
-        console.log('is_last: ', is_last)
-        console.log('is_odd: ', is_odd)
         return (
             <ClientCatalogItem
-                key={client.name}
+                key={index}
                 className={[`statistic`].join(` `)}
                 is_last={is_last}
                 is_odd={is_odd}
             >
-                <ClientCatalogLink href={client.target_link}>
+                <ClientCatalogLink href={client.target_link} target="_blank">
                     <ObjectiveIcon
                         className={[`fa`, client.img_src].join(` `)}
                         style={{
                             backgroundImage: `url("${client.img_src}")`,
-                            opacity: logo_opacity
+                            opacity: logo_opacity,
                         }}
                     ></ObjectiveIcon>
                 </ClientCatalogLink>
@@ -143,20 +136,19 @@ const ClientCatalogGrid = styled.div`
 `;
 
 interface ClientCatalogItemProps {
-    is_last: boolean,
-    is_odd: boolean
+    is_last: boolean;
+    is_odd: boolean;
 }
 
-const ClientCatalogItem = styled.div <ClientCatalogItemProps>`
+const ClientCatalogItem = styled.div<ClientCatalogItemProps>`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
     @media only screen and (min-width: 768px) {
-        margin-left: ${props => 
-            props.is_last && props.is_odd ? '67%' : 'unset'
-        };
+        margin-left: ${(props) =>
+            props.is_last && props.is_odd ? "67%" : "unset"};
     }
 `;
 
