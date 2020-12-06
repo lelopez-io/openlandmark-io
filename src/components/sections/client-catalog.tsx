@@ -63,6 +63,8 @@ const ClientCatalog = () => {
     const clients_shuffle = clients.sort(() => Math.random() - 0.5);
 
     const clientCatalog = clients_shuffle.map(function (client, index) {
+        const total_length_is_odd = clients_shuffle.length % 2 > 0;
+        const is_first = index === 0;
         const is_last = index + 1 === clients_shuffle.length;
         const is_odd = (index + 1) % 2 > 0;
 
@@ -70,17 +72,13 @@ const ClientCatalog = () => {
             <ClientCatalogItem
                 key={index}
                 className={[`statistic`].join(` `)}
-                is_last={is_last}
-                is_odd={is_odd}
+                is_centered={is_first && total_length_is_odd}
+              
             >
-                <ClientCatalogLink href={client.target_link} target="_blank">
-                    <ObjectiveIcon
-                        className={[`fa`, client.img_src].join(` `)}
-                        style={{
-                            backgroundImage: `url("${client.img_src}")`,
-                            opacity: logo_opacity,
-                        }}
-                    ></ObjectiveIcon>
+                <ClientCatalogLink href={client.target_link} target="_blank"    style={{
+                    backgroundImage: `url("${client.img_src}")`,
+                    opacity: logo_opacity,
+                }}>
                 </ClientCatalogLink>
             </ClientCatalogItem>
         );
@@ -136,25 +134,37 @@ const ClientCatalogGrid = styled.div`
 `;
 
 interface ClientCatalogItemProps {
-    is_last: boolean;
-    is_odd: boolean;
+    is_centered: boolean;
 }
 
 const ClientCatalogItem = styled.div<ClientCatalogItemProps>`
+    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    @media only screen and (min-width: 768px) {
-        margin-left: ${(props) =>
-            props.is_last && props.is_odd ? "67%" : "unset"};
+    @media only screen and (min-width: 768px) {            
+        ${(props) =>
+        props.is_centered
+            ? `width: 50%;
+            grid-column: 1 / -1;
+            margin-left: 25%;`
+            : ``}
     }
 `;
 
 const ClientCatalogLink = styled.a`
     margin-top: 1.75rem;
     margin-bottom: 0.75rem;
+
+    height: 150px;
+    width: 70%;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 `;
 
 const ObjectiveIcon = styled.span`
