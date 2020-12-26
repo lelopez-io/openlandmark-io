@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 
 import { loadStripe } from "@stripe/stripe-js";
+import styled from 'styled-components'
 
 const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUB_KEY);
 const l1EmailService = process.env.GATSBY_LEVEL_ONE_EMAIL_SERVICE_PRICE;
+
+const StyledCheckbox = styled.input``
 
 const L1EmailService = (data) => {
     const handleClick = async (event) => {
@@ -57,6 +60,7 @@ const L1EmailService = (data) => {
                         )}
                     </span>
                 </p>
+                <p><StyledCheckbox type="checkbox"/> TOS</p>
             </div>
 
             <button role="link" onClick={handleClick}>
