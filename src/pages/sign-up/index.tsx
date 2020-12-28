@@ -14,6 +14,18 @@ import L2WebSupport from "../../components/shop/l2-web-support";
 
 import GetStarted from "../../components/sections/get-started";
 
+import { Product, ProductProps } from '../../components/Product'
+
+const l1EmailServiceProps: ProductProps = {
+    title: "Level 1: Email Service",
+    subtitle: "A recurring payment for a simple automated email service",
+    imgUrl: "/images/email.png",
+    price_stripe: process.env.GATSBY_LEVEL_ONE_EMAIL_SERVICE_PRICE,
+    price_total:"$16.23 monthly",
+    price_service:"14.99",
+    price_taxes: "1.24",
+}
+
 const ShopIndexPage = () => (
     <Layout>
         {/* <SEO title="Home" /> */}
@@ -27,6 +39,8 @@ const ShopIndexPage = () => (
                 </SectionTitle>
 
                 <ShopWrapper>
+                    <Product {...l1EmailServiceProps}/>
+
                     <L1EmailService />
                     <L1WebHosting />
                     <L1WebSupport />

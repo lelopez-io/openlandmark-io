@@ -7,8 +7,6 @@ import styled from 'styled-components'
 const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUB_KEY);
 const l1EmailService = process.env.GATSBY_LEVEL_ONE_EMAIL_SERVICE_PRICE;
 
-const StyledCheckbox = styled.input``
-
 const L1EmailService = (data) => {
     const handleClick = async (event) => {
         // When the customer clicks on the button, redirect them to Checkout.
@@ -30,7 +28,7 @@ const L1EmailService = (data) => {
     const [isShown, setIsShown] = useState(false);
 
     return (
-        <div className="purchase-card card-box-shadow">
+        <form className="purchase-card card-box-shadow">
             <div className="purchase-card-content">
                 <h1>Level 1: Email Service</h1>
                 <p>A recurring payment for a simple automated email service</p>
@@ -39,11 +37,9 @@ const L1EmailService = (data) => {
                 </Link>
 
                 <p className="pricing">
-                    $16.23 <span>(incl. tax)</span>
+                    $16.23 monthly
                 </p>
                 <p>
-                    per month
-                    <br />
                     <span
                         onMouseEnter={() => setIsShown(true)}
                         onMouseLeave={() => setIsShown(false)}
@@ -60,14 +56,26 @@ const L1EmailService = (data) => {
                         )}
                     </span>
                 </p>
-                <p><StyledCheckbox type="checkbox"/> TOS</p>
+                <div>
+                    <StyledCheckbox type="checkbox" id="tos_email_service" required /> by subscribing you agree to the
+                     <Styledlink htmlFor="tos_email_service"> terms of service</Styledlink>
+                </div>
             </div>
 
-            <button role="link" onClick={handleClick}>
+            <button type="submit" role="Link">
                 Subscribe
             </button>
-        </div>
+        </form>
     );
 };
 
 export default L1EmailService;
+
+const StyledCheckbox = styled.input`
+margin-right: 15px;
+margin-top: 30px;
+`;
+
+const Styledlink = styled.label`
+color: #006A8F;
+`;

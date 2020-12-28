@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 
 import { loadStripe } from "@stripe/stripe-js";
+import styled from 'styled-components'
 
 const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUB_KEY);
 const price = process.env.GATSBY_LEVEL_TWO_WEB_SUPPORT_PRICE;
@@ -27,7 +28,7 @@ const L2WebSupport = (data) => {
     const [isShown, setIsShown] = useState(false);
 
     return (
-        <div className="purchase-card card-box-shadow">
+        <form className="purchase-card card-box-shadow">
             <div className="purchase-card-content">
                 <h1>Level 2: Web Support</h1>
                 <p>
@@ -38,11 +39,9 @@ const L2WebSupport = (data) => {
                 </Link>
 
                 <p className="pricing">
-                    $278.76 <span>(incl. tax)</span>
+                    $278.76 monthly
                 </p>
                 <p>
-                    per month
-                    <br />
                     <span
                         onMouseEnter={() => setIsShown(true)}
                         onMouseLeave={() => setIsShown(false)}
@@ -60,13 +59,26 @@ const L2WebSupport = (data) => {
                         )}
                     </span>
                 </p>
+                <div>
+                    <StyledCheckbox type="checkbox" id="tos_email_service" required /> by subscribing you agree to the
+                     <Styledlink htmlFor="tos_email_service"> terms of service</Styledlink>
+                </div>
             </div>
 
-            <button role="link" onClick={handleClick}>
+            <button type="submit" role="Link">
                 Subscribe
             </button>
-        </div>
+        </form>
     );
 };
 
 export default L2WebSupport;
+
+const StyledCheckbox = styled.input`
+margin-right: 15px;
+margin-top: 30px;
+`;
+
+const Styledlink = styled.label`
+color: #006A8F;
+`;
