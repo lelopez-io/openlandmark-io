@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import React from 'react'
+import styled from 'styled-components'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
-import { Container } from "../global";
+import { Container } from 'components/global'
 
 const Footer = () => {
     const data = useStaticQuery(graphql`
@@ -15,8 +15,8 @@ const Footer = () => {
                 }
             }
         }
-    `);
-    const site = data.allGhostSettings.edges[0].node;
+    `)
+    const site = data.allGhostSettings.edges[0].node
 
     return (
         <FooterWrapper id="footer">
@@ -60,14 +60,14 @@ const Footer = () => {
                 &nbsp;© 2020
             </BrandContainer>
         </FooterWrapper>
-    );
-};
+    )
+}
 
 const FooterWrapper = styled.footer`
     background-color: white;
     margin: 80px 0 0;
     padding: 0 0 80px;
-`;
+`
 
 const Logo = styled.div`
     font-family: ${(props) => props.theme.font.extrabold};
@@ -83,7 +83,7 @@ const Logo = styled.div`
     z-index: 9;
     text-decoration: none;
     outline: 0px;
-`;
+`
 
 const BrandContainer = styled(Container)`
     position: relative;
@@ -94,7 +94,7 @@ const BrandContainer = styled(Container)`
 
     @media (max-width: ${(props) => props.theme.screen.sm}) {
     }
-`;
+`
 const FooterColumnContainer = styled.div`
     width: 100%;
     margin: 0 auto;
@@ -116,7 +116,7 @@ const FooterColumnContainer = styled.div`
     @media (min-width: ${(props) => props.theme.screen.sm}) {
         max-width: 720px;
     }
-`;
+`
 const FooterColumn = styled.div`
     text-align: center;
     span {
@@ -136,6 +136,6 @@ const FooterColumn = styled.div`
             font-size: 15px;
         }
     }
-`;
+`
 
-export default Footer;
+export default Footer

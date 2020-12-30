@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Product, ProductProps } from '../Product'
+import { Product, ProductProps } from 'components/Product'
 
 export interface ProductsProps {
     productsList: Array<ProductProps>

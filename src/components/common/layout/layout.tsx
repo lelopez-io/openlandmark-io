@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { ThemeProvider } from "styled-components";
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { ThemeProvider } from 'styled-components'
 
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from 'gatsby'
 
-import theme from "../../../styles/theme";
-import GlobalStyles from "../../../styles/global-styles";
+import theme from 'assets/styles/theme'
+import GlobalStyles from 'assets/styles/global-styles'
 
-import "../../../assets/scss/main.scss";
+import 'assets/scss/main.scss'
 
 const Layout = ({ children }) => {
     const data = useStaticQuery(graphql`
@@ -21,8 +21,8 @@ const Layout = ({ children }) => {
                 }
             }
         }
-    `);
-    const site = data.allGhostSettings.edges[0].node;
+    `)
+    const site = data.allGhostSettings.edges[0].node
 
     return (
         <ThemeProvider theme={theme}>
@@ -35,11 +35,11 @@ const Layout = ({ children }) => {
                 {children}
             </>
         </ThemeProvider>
-    );
-};
+    )
+}
 
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
-};
+}
 
-export default Layout;
+export default Layout

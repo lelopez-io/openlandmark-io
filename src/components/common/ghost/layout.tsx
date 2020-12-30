@@ -1,24 +1,24 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 
-import config from "../../../utils/site-config";
+import config from 'utils/site-config'
 
-import { Section, Container } from "../../global";
+import { Section, Container } from 'components/global'
 
-import Navigation from "../navigation/navigation";
-import Header from "../../sections/header";
-import Footer from "../../sections/footer";
+import Navigation from 'components/common/navigation/navigation'
+import Header from 'sections/header'
+import Footer from 'sections/footer'
 
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from 'styled-components'
 
-import theme from "../../../styles/theme";
-import GlobalStyles from "../../../styles/global-styles";
+import theme from 'assets/styles/theme'
+import GlobalStyles from 'assets/styles/global-styles'
 
 // Styles - for Ghost pages
-import "../../../assets/css/app.css";
-import "../../../assets/scss/main.scss";
+import 'assets/css/app.css'
+import 'assets/scss/main.scss'
 
 /**
  * Main layout component
@@ -29,7 +29,7 @@ import "../../../assets/scss/main.scss";
  *
  */
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
-    const site = data.allGhostSettings.edges[0].node;
+    const site = data.allGhostSettings.edges[0].node
 
     return (
         <ThemeProvider theme={theme}>
@@ -49,8 +49,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <Footer />
             </>
         </ThemeProvider>
-    );
-};
+    )
+}
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
@@ -60,7 +60,7 @@ DefaultLayout.propTypes = {
         file: PropTypes.object,
         allGhostSettings: PropTypes.object.isRequired,
     }).isRequired,
-};
+}
 
 const DefaultLayoutSettingsQuery = (props) => (
     <StaticQuery
@@ -84,10 +84,10 @@ const DefaultLayoutSettingsQuery = (props) => (
         `}
         render={(data) => <DefaultLayout data={data} {...props} />}
     />
-);
+)
 
-export default DefaultLayoutSettingsQuery;
+export default DefaultLayoutSettingsQuery
 
 const StyledSection = styled(Section)`
     padding-top: 160px;
-`;
+`

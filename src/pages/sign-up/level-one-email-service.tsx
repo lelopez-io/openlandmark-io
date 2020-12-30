@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Section, Container } from '../../components/global'
+import { Section, Container } from 'components/global'
 
-import Layout from '../../components/common/layout/layout'
-import Navigation from '../../components/common/navigation/navigation'
-import Footer from '../../components/sections/footer'
+import Layout from 'components/common/layout/layout'
+import Navigation from 'components/common/navigation/navigation'
+import Footer from 'sections/footer'
 
-import { Product } from '../../components/Product'
+import { Product } from 'components/Product'
 
-import { getProduct } from '../../components/Products'
+import { getProduct } from 'components/Products'
 
 let thisProduct = getProduct('Level 1: Email Service')
 

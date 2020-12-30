@@ -1,39 +1,39 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import url from "url";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import _ from 'lodash'
+import url from 'url'
 
-import getAuthorProperties from "./get-author-properties";
-import ImageMeta from "./image-meta";
-import config from "../../../utils/site-config";
+import getAuthorProperties from './get-author-properties'
+import ImageMeta from './image-meta'
+import config from 'utils/site-config'
 
-import { tags as tagsHelper } from "@tryghost/helpers";
+import { tags as tagsHelper } from '@tryghost/helpers'
 
 const ArticleMetaGhost = ({ data, settings, canonical }) => {
-    const ghostPost = data;
-    settings = settings.allGhostSettings.edges[0].node;
+    const ghostPost = data
+    settings = settings.allGhostSettings.edges[0].node
 
-    const author = getAuthorProperties(ghostPost.primary_author);
+    const author = getAuthorProperties(ghostPost.primary_author)
     const publicTags = _.map(
         tagsHelper(ghostPost, { visibility: `public`, fn: (tag) => tag }),
         `name`
-    );
-    const primaryTag = publicTags[0] || ``;
+    )
+    const primaryTag = publicTags[0] || ``
     const shareImage = ghostPost.feature_image
         ? ghostPost.feature_image
-        : _.get(settings, `cover_image`, null);
+        : _.get(settings, `cover_image`, null)
     const publisherLogo =
         settings.logo || config.siteIcon
             ? url.resolve(config.siteUrl, settings.logo || config.siteIcon)
-            : null;
+            : null
 
     const jsonLd = {
-        "@context": `https://schema.org/`,
-        "@type": `Article`,
+        '@context': `https://schema.org/`,
+        '@type': `Article`,
         author: {
-            "@type": `Person`,
+            '@type': `Person`,
             name: author.name,
             image: author.image ? author.image : undefined,
             sameAs: author.sameAsArray ? author.sameAsArray : undefined,
@@ -45,17 +45,17 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
         dateModified: ghostPost.updated_at,
         image: shareImage
             ? {
-                  "@type": `ImageObject`,
+                  '@type': `ImageObject`,
                   url: shareImage,
                   width: config.shareImageWidth,
                   height: config.shareImageHeight,
               }
             : undefined,
         publisher: {
-            "@type": `Organization`,
+            '@type': `Organization`,
             name: settings.title,
             logo: {
-                "@type": `ImageObject`,
+                '@type': `ImageObject`,
                 url: publisherLogo,
                 width: 60,
                 height: 60,
@@ -63,10 +63,10 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
         },
         description: ghostPost.meta_description || ghostPost.excerpt,
         mainEntityOfPage: {
-            "@type": `WebPage`,
-            "@id": config.siteUrl,
+            '@type': `WebPage`,
+            '@id': config.siteUrl,
         },
-    };
+    }
 
     return (
         <>
@@ -159,8 +159,8 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
             </Helmet>
             <ImageMeta image={shareImage} />
         </>
-    );
-};
+    )
+}
 
 ArticleMetaGhost.propTypes = {
     data: PropTypes.shape({
@@ -194,7 +194,7 @@ ArticleMetaGhost.propTypes = {
         allGhostSettings: PropTypes.object.isRequired,
     }).isRequired,
     canonical: PropTypes.string.isRequired,
-};
+}
 
 const ArticleMetaQuery = (props) => (
     <StaticQuery
@@ -211,6 +211,6 @@ const ArticleMetaQuery = (props) => (
         `}
         render={(data) => <ArticleMetaGhost settings={data} {...props} />}
     />
-);
+)
 
-export default ArticleMetaQuery;
+export default ArticleMetaQuery

@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { Link } from "gatsby";
+import React, { useState } from 'react'
+import { Link } from 'gatsby'
 
-import { loadStripe } from "@stripe/stripe-js";
+import { loadStripe } from '@stripe/stripe-js'
 import styled from 'styled-components'
 
-const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUB_KEY);
-const simpleHostingPrice = process.env.GATSBY_SIMPLE_HOSTING_PRICE;
+const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUB_KEY)
+const simpleHostingPrice = process.env.GATSBY_SIMPLE_HOSTING_PRICE
 
 const L1WebHosting = (data) => {
     const handleClick = async (event) => {
         // When the customer clicks on the button, redirect them to Checkout.
-        const stripe = await stripePromise;
+        const stripe = await stripePromise
         const { error } = await stripe.redirectToCheckout({
             lineItems: [
                 // Replace with the ID of your price
@@ -19,13 +19,13 @@ const L1WebHosting = (data) => {
             mode: `subscription`,
             successUrl: `https://openlandmark.io/success`,
             cancelUrl: `https://openlandmark.io/cancel`,
-        });
+        })
         // If `redirectToCheckout` fails due to a browser or network
         // error, display the localized error message to your customer
         // using `error.message`.
-    };
+    }
 
-    const [isShown, setIsShown] = useState(false);
+    const [isShown, setIsShown] = useState(false)
 
     return (
         <form className="purchase-card card-box-shadow">
@@ -36,9 +36,7 @@ const L1WebHosting = (data) => {
                     <img src="/images/cloud.png" />
                 </Link>
 
-                <p className="pricing">
-                    $16.23 monthly
-                </p>
+                <p className="pricing">$16.23 monthly</p>
                 <p>
                     <span
                         onMouseEnter={() => setIsShown(true)}
@@ -57,8 +55,16 @@ const L1WebHosting = (data) => {
                     </span>
                 </p>
                 <div>
-                    <StyledCheckbox type="checkbox" id="tos_email_service" required /> by subscribing you agree to the
-                     <Styledlink htmlFor="tos_email_service"> terms of service</Styledlink>
+                    <StyledCheckbox
+                        type="checkbox"
+                        id="tos_email_service"
+                        required
+                    />{' '}
+                    by subscribing you agree to the
+                    <Styledlink htmlFor="tos_email_service">
+                        {' '}
+                        terms of service
+                    </Styledlink>
                 </div>
             </div>
 
@@ -66,16 +72,16 @@ const L1WebHosting = (data) => {
                 Subscribe
             </button>
         </form>
-    );
-};
+    )
+}
 
-export default L1WebHosting;
+export default L1WebHosting
 
 const StyledCheckbox = styled.input`
-margin-right: 15px;
-margin-top: 30px;
-`;
+    margin-right: 15px;
+    margin-top: 30px;
+`
 
 const Styledlink = styled.label`
-color: #006A8F;
-`;
+    color: #006a8f;
+`

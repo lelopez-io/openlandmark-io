@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const CustomProject = () => (
     <div className="purchase-card card-dark">
@@ -14,6 +14,6 @@ const CustomProject = () => (
             Email
         </button>
     </div>
-);
+)
 
-export default CustomProject;
+export default CustomProject

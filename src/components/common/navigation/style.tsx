@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import { Container } from "../../global";
+import { Container } from 'components/global'
 
 export const Nav = styled.nav`
     padding: ${(props) => (props.scrolled ? `16px 0` : `24px 0`)};
@@ -10,13 +10,13 @@ export const Nav = styled.nav`
     z-index: 1000;
     background: ${(props) => (props.scrolled ? `white` : null)};
     transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-`;
+`
 
 export const StyledContainer = styled(Container)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-`;
+`
 
 export const NavListWrapper = styled.div`
     ul {
@@ -38,7 +38,7 @@ export const NavListWrapper = styled.div`
         }
       `};
     }
-`;
+`
 
 export const NavItem = styled.li`
     margin: 0 0.75em;
@@ -56,14 +56,14 @@ export const NavItem = styled.li`
             opacity: 1;
         }
     }
-`;
+`
 
 export const MobileMenu = styled.div`
     width: 100%;
     height: 100vh;
     z-index: 1000;
     background: ${(props) => props.theme.color.regular};
-`;
+`
 
 export const Brand = styled.div`
     font-family: ${(props) => props.theme.font.extrabold};
@@ -82,7 +82,7 @@ export const Brand = styled.div`
             text-decoration: none;
         }
     }
-`;
+`
 export const ActionsContainer = styled.div`
     display: flex;
     align-items: center;
@@ -97,7 +97,7 @@ export const ActionsContainer = styled.div`
         text-transform: uppercase;
         font-size: 12px;
     }
-`;
+`
 
 export const Mobile = styled.div`
     display: none;
@@ -117,7 +117,7 @@ export const Mobile = styled.div`
       display: none;
     }
   `}
-`;
+`
 
 // Background blur info
 // background-color: ${props => props.scrolled && `rgba(245, 245, 250, .8`};

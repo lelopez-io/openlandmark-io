@@ -1,12 +1,12 @@
-import React from "react";
-import Helmet from "react-helmet";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import { StaticQuery, graphql } from "gatsby";
-import url from "url";
+import React from 'react'
+import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
+import _ from 'lodash'
+import { StaticQuery, graphql } from 'gatsby'
+import url from 'url'
 
-import ImageMeta from "./image-meta";
-import config from "../../../utils/site-config";
+import ImageMeta from './image-meta'
+import config from 'utils/site-config'
 
 const WebsiteMeta = ({
     data,
@@ -17,53 +17,53 @@ const WebsiteMeta = ({
     image,
     type,
 }) => {
-    settings = settings.allGhostSettings.edges[0].node;
+    settings = settings.allGhostSettings.edges[0].node
 
     const publisherLogo = url.resolve(
         config.siteUrl,
         settings.logo || config.siteIcon
-    );
+    )
     let shareImage =
-        image || data.feature_image || _.get(settings, `cover_image`, null);
+        image || data.feature_image || _.get(settings, `cover_image`, null)
 
-    shareImage = shareImage ? url.resolve(config.siteUrl, shareImage) : null;
+    shareImage = shareImage ? url.resolve(config.siteUrl, shareImage) : null
 
     description =
         description ||
         data.meta_description ||
         data.description ||
         config.siteDescriptionMeta ||
-        settings.description;
-    title = `${title || data.meta_title || data.name || data.title}`;
+        settings.description
+    title = `${title || data.meta_title || data.name || data.title}`
 
     const jsonLd = {
-        "@context": `https://schema.org/`,
-        "@type": type,
+        '@context': `https://schema.org/`,
+        '@type': type,
         url: canonical,
         image: shareImage
             ? {
-                  "@type": `ImageObject`,
+                  '@type': `ImageObject`,
                   url: shareImage,
                   width: config.shareImageWidth,
                   height: config.shareImageHeight,
               }
             : undefined,
         publisher: {
-            "@type": `Organization`,
+            '@type': `Organization`,
             name: settings.title,
             logo: {
-                "@type": `ImageObject`,
+                '@type': `ImageObject`,
                 url: publisherLogo,
                 width: 60,
                 height: 60,
             },
         },
         mainEntityOfPage: {
-            "@type": `WebPage`,
-            "@id": config.siteUrl,
+            '@type': `WebPage`,
+            '@id': config.siteUrl,
         },
         description,
-    };
+    }
 
     return (
         <>
@@ -97,8 +97,8 @@ const WebsiteMeta = ({
             </Helmet>
             <ImageMeta image={shareImage} />
         </>
-    );
-};
+    )
+}
 
 WebsiteMeta.propTypes = {
     data: PropTypes.shape({
@@ -123,7 +123,7 @@ WebsiteMeta.propTypes = {
     description: PropTypes.string,
     image: PropTypes.string,
     type: PropTypes.oneOf([`WebSite`, `Series`]).isRequired,
-};
+}
 
 const WebsiteMetaQuery = (props) => (
     <StaticQuery
@@ -140,6 +140,6 @@ const WebsiteMetaQuery = (props) => (
         `}
         render={(data) => <WebsiteMeta settings={data} {...props} />}
     />
-);
+)
 
-export default WebsiteMetaQuery;
+export default WebsiteMetaQuery

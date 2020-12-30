@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import { Section, Container } from "../global";
+import { Section, Container } from 'components/global'
 
 const stats = [
     {
@@ -49,7 +49,7 @@ const stats = [
         source: `(Status Labs, 2018)`,
         source_link: ``,
     },
-];
+]
 
 const Objectives = () => {
     const objectivesStats = stats.map(function (stat, index) {
@@ -70,8 +70,8 @@ const Objectives = () => {
                     <em className="cited-source">{stat.source}</em>
                 </ObjectiveText>
             </ObjectiveItem>
-        );
-    });
+        )
+    })
 
     return (
         <StyledSection id="Objectives">
@@ -86,15 +86,15 @@ const Objectives = () => {
                 </ObjectivesGrid> */}
             </StyledContainer>
         </StyledSection>
-    );
-};
+    )
+}
 
-export default Objectives;
+export default Objectives
 
 const StyledSection = styled(Section)`
     padding-bottom: 120px;
-`;
-const StyledContainer = styled(Container)``;
+`
+const StyledContainer = styled(Container)``
 
 const SectionTitle = styled.h3`
     color: ${(props) => props.theme.color.primary};
@@ -102,7 +102,7 @@ const SectionTitle = styled.h3`
     justify-content: center;
     margin: 0 auto 40px;
     text-align: center;
-`;
+`
 
 const Subtitle = styled.h5`
     font-size: 16px;
@@ -110,7 +110,7 @@ const Subtitle = styled.h5`
     letter-spacing: 0px;
     margin-bottom: 12px;
     text-align: center;
-`;
+`
 
 const ObjectivesGrid = styled.div`
     max-width: 670px;
@@ -123,28 +123,28 @@ const ObjectivesGrid = styled.div`
         grid-template-columns: 1fr;
         padding: 0 64px;
     }
-`;
+`
 
 const ObjectiveItem = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-`;
+`
 
 const ObjectiveIcon = styled.span`
     font-size: 2.75rem;
     margin-top: 1.75rem;
     margin-bottom: 0.75rem;
-`;
+`
 
 const ObjectiveTitle = styled.h5`
     color: ${(props) => props.theme.color.primary};
     letter-spacing: 0px;
     line-height: 30px;
     margin-bottom: 10px;
-`;
+`
 
 const ObjectiveText = styled.p`
     text-align: center;
-`;
+`

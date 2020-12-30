@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
-import { Layout } from "../components/common/ghost";
-import { Link } from "gatsby";
+import { Layout } from 'components/common/ghost'
+import { Link } from 'gatsby'
 
 const PaymentsPage = (data) => (
     <Layout>
@@ -16,6 +16,6 @@ const PaymentsPage = (data) => (
             </article>
         </div>
     </Layout>
-);
+)
 
-export default PaymentsPage;
+export default PaymentsPage

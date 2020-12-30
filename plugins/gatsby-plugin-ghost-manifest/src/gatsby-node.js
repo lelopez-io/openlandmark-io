@@ -8,13 +8,15 @@ sharp.simd(true)
 
 function generateIcons(icons, srcIcon) {
     return Promise.map(icons, (icon) => {
-        const size = parseInt(icon.sizes.substring(0, icon.sizes.lastIndexOf(`x`)))
+        const size = parseInt(
+            icon.sizes.substring(0, icon.sizes.lastIndexOf(`x`))
+        )
         const imgPath = path.join(`public`, icon.src)
 
         return sharp(srcIcon)
             .resize(size)
             .toFile(imgPath)
-            .then(() => { })
+            .then(() => {})
     })
 }
 

@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { graphql, StaticQuery, Link } from "gatsby";
-import Img from "gatsby-image";
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { graphql, StaticQuery, Link } from 'gatsby'
+import Img from 'gatsby-image'
 
-import { Container } from "../global";
+import { Container } from 'components/global'
 
 const Header = ({ data }) => {
-    const site = data.allGhostSettings.edges[0].node;
+    const site = data.allGhostSettings.edges[0].node
 
     const handleSubmit = (event) => {
-        event.preventDefault();
-    };
+        event.preventDefault()
+    }
 
     return (
         <HeaderWrapper
@@ -29,15 +29,15 @@ const Header = ({ data }) => {
                 <Flex></Flex>
             </Container>
         </HeaderWrapper>
-    );
-};
+    )
+}
 
 Header.propTypes = {
     data: PropTypes.shape({
         file: PropTypes.object,
         allGhostSettings: PropTypes.object.isRequired,
     }).isRequired,
-};
+}
 
 const HeaderSettingsQuery = (props) => (
     <StaticQuery
@@ -61,9 +61,9 @@ const HeaderSettingsQuery = (props) => (
         `}
         render={(data) => <Header data={data} {...props} />}
     />
-);
+)
 
-export default HeaderSettingsQuery;
+export default HeaderSettingsQuery
 
 const HeaderWrapper = styled.header`
     background-color: #f8f8f8;
@@ -76,7 +76,7 @@ const HeaderWrapper = styled.header`
     // add a white overlay to background image
     &:after {
         position: absolute;
-        content: "";
+        content: '';
         display: block;
         top: 0;
         left: 0;
@@ -84,13 +84,13 @@ const HeaderWrapper = styled.header`
         bottom: 0;
         background: rgba(255, 255, 255, 0.5);
     }
-`;
+`
 const Subtitle = styled.h5`
     font-size: 16px;
     color: ${(props) => props.theme.color.accent};
     letter-spacing: 0px;
     margin-bottom: 16px;
-`;
+`
 
 const HeaderTextGroup = styled.div`
     margin: 0;
@@ -117,7 +117,7 @@ const HeaderTextGroup = styled.div`
     p {
         margin-bottom: 48px;
     }
-`;
+`
 
 const Flex = styled.div`
     position: relative;
@@ -130,7 +130,7 @@ const Flex = styled.div`
         grid-template-columns: 1fr;
         grid-gap: 64px;
     }
-`;
+`
 
 const ImageWrapper = styled.div`
     justify-self: end;
@@ -143,7 +143,7 @@ const ImageWrapper = styled.div`
     @media (max-width: ${(props) => props.theme.screen.sm}) {
         width: 150px;
     }
-`;
+`
 
 const StyledImage = styled(Img)`
     width: 400px;
@@ -154,4 +154,4 @@ const StyledImage = styled(Img)`
         width: 200px;
         display: none;
     }
-`;
+`

@@ -1,42 +1,42 @@
-import React from "react";
-import Helmet from "react-helmet";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react'
+import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
+import _ from 'lodash'
+import { StaticQuery, graphql } from 'gatsby'
 
-import ImageMeta from "./image-meta";
-import getAuthorProperties from "./get-author-properties";
-import config from "../../../utils/site-config";
+import ImageMeta from './image-meta'
+import getAuthorProperties from './get-author-properties'
+import config from 'utils/site-config'
 
 const AuthorMeta = ({ data, settings, canonical }) => {
-    settings = settings.allGhostSettings.edges[0].node;
+    settings = settings.allGhostSettings.edges[0].node
 
-    const author = getAuthorProperties(data);
-    const shareImage = author.image || _.get(settings, `cover_image`, null);
-    const title = `${data.name} - ${settings.title}`;
+    const author = getAuthorProperties(data)
+    const shareImage = author.image || _.get(settings, `cover_image`, null)
+    const title = `${data.name} - ${settings.title}`
     const description =
-        data.bio || config.siteDescriptionMeta || settings.description;
+        data.bio || config.siteDescriptionMeta || settings.description
 
     const jsonLd = {
-        "@context": `https://schema.org/`,
-        "@type": `Person`,
+        '@context': `https://schema.org/`,
+        '@type': `Person`,
         name: data.name,
         sameAs: author.sameAsArray ? author.sameAsArray : undefined,
         url: canonical,
         image: shareImage
             ? {
-                  "@type": `ImageObject`,
+                  '@type': `ImageObject`,
                   url: shareImage,
                   width: config.shareImageWidth,
                   height: config.shareImageHeight,
               }
             : undefined,
         mainEntityOfPage: {
-            "@type": `WebPage`,
-            "@id": config.siteUrl,
+            '@type': `WebPage`,
+            '@id': config.siteUrl,
         },
         description,
-    };
+    }
 
     return (
         <>
@@ -70,8 +70,8 @@ const AuthorMeta = ({ data, settings, canonical }) => {
             </Helmet>
             <ImageMeta image={shareImage} />
         </>
-    );
-};
+    )
+}
 
 AuthorMeta.propTypes = {
     data: PropTypes.shape({
@@ -89,7 +89,7 @@ AuthorMeta.propTypes = {
         allGhostSettings: PropTypes.object.isRequired,
     }).isRequired,
     canonical: PropTypes.string.isRequired,
-};
+}
 
 const AuthorMetaQuery = (props) => (
     <StaticQuery
@@ -106,6 +106,6 @@ const AuthorMetaQuery = (props) => (
         `}
         render={(data) => <AuthorMeta settings={data} {...props} />}
     />
-);
+)
 
-export default AuthorMetaQuery;
+export default AuthorMetaQuery

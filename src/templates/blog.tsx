@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import styled from "styled-components";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import { Layout, PostCard, Pagination } from "../components/common/ghost";
-import { MetaData } from "../components/common/meta";
+import { Layout, PostCard, Pagination } from 'components/common/ghost'
+import { MetaData } from 'components/common/meta'
 
 /**
  * Main index page (home page)
@@ -15,7 +15,7 @@ import { MetaData } from "../components/common/meta";
  *
  */
 const Index = ({ data, location, pageContext }) => {
-    const posts = data.allGhostPost.edges;
+    const posts = data.allGhostPost.edges
 
     return (
         <>
@@ -34,8 +34,8 @@ const Index = ({ data, location, pageContext }) => {
                 <Pagination pageContext={pageContext} />
             </Layout>
         </>
-    );
-};
+    )
+}
 
 Index.propTypes = {
     data: PropTypes.shape({
@@ -45,9 +45,9 @@ Index.propTypes = {
         pathname: PropTypes.string.isRequired,
     }).isRequired,
     pageContext: PropTypes.object,
-};
+}
 
-export default Index;
+export default Index
 
 // This page query loads all posts sorted descending by published date
 // The `limit` and `skip` values are used for pagination
@@ -65,13 +65,13 @@ export const pageQuery = graphql`
             }
         }
     }
-`;
+`
 
 const SectionTitle = styled.h1`
     display: flex;
     justify-content: center;
     text-align: center;
-`;
+`
 
 const Subtitle = styled.h5`
     font-size: 16px;
@@ -79,8 +79,8 @@ const Subtitle = styled.h5`
     letter-spacing: 0px;
     margin-bottom: 12px;
     text-align: center;
-`;
+`
 
 const ContentWrapper = styled.section`
     margin-top: 6rem;
-`;
+`

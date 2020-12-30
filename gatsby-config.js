@@ -1,32 +1,32 @@
-const path = require(`path`);
+const path = require(`path`)
 require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
-const config = require(`./src/utils/site-config`);
-const generateRSSFeed = require(`./src/utils/rss/generate-feed`);
+const config = require(`./src/utils/site-config`)
+const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
 
-let ghostConfig;
+let ghostConfig
 
 try {
-    ghostConfig = require(`./.ghost`);
+    ghostConfig = require(`./.ghost`)
 } catch (e) {
     ghostConfig = {
         production: {
             apiUrl: process.env.GHOST_API_URL,
             contentApiKey: process.env.GHOST_CONTENT_API_KEY,
         },
-    };
+    }
 } finally {
     const { apiUrl, contentApiKey } =
         process.env.NODE_ENV === `development`
             ? ghostConfig.development
-            : ghostConfig.production;
+            : ghostConfig.production
 
     if (!apiUrl || !contentApiKey || contentApiKey.match(/<key>/)) {
         throw new Error(
             `GHOST_API_URL and GHOST_CONTENT_API_KEY are required to build. Check the README.`
-        ); // eslint-disable-line
+        ) // eslint-disable-line
     }
 }
 
@@ -56,12 +56,12 @@ module.exports = {
         {
             resolve: `gatsby-plugin-gtag`,
             options: {
-              // your google analytics tracking id
-              trackingId: `UA-182367679-1`,
-              // Puts tracking script in the head instead of the body
-              head: true,
-              // enable ip anonymization
-              anonymize: false,
+                // your google analytics tracking id
+                trackingId: `UA-182367679-1`,
+                // Puts tracking script in the head instead of the body
+                head: true,
+                // enable ip anonymization
+                anonymize: false,
             },
         },
         /**
@@ -227,10 +227,21 @@ module.exports = {
         `gatsby-plugin-typescript`,
         `gatsby-plugin-sass`,
         {
+            resolve: `gatsby-plugin-root-import`,
+            options: {
+                assets: path.join(__dirname, 'src/assets'),
+                components: path.join(__dirname, 'src/components'),
+                pages: path.join(__dirname, 'src/pages'),
+                sections: path.join(__dirname, 'src/sections'),
+                templates: path.join(__dirname, 'src/templates'),
+                utils: path.join(__dirname, 'src/utils'),
+            },
+        },
+        {
             resolve: `gatsby-plugin-styled-components`,
             options: {
                 // Add any options here
             },
         },
     ],
-};
+}

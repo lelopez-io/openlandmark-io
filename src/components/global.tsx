@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
     max-width: 1200px;
@@ -27,7 +27,7 @@ export const Container = styled.div`
         `
     max-width: 1200px !important;
   `};
-`;
+`
 
 export const Section = styled.section`
     padding: 80px 0;
@@ -35,11 +35,11 @@ export const Section = styled.section`
     background-color: ${(props) => {
         switch (props.accent) {
             case `secondary`:
-                return props.theme.color.white.dark;
+                return props.theme.color.white.dark
             case `main`:
-                return props.theme.color.primary;
+                return props.theme.color.primary
             default:
-                return `white`;
+                return `white`
         }
     }};
 
@@ -54,4 +54,4 @@ export const Section = styled.section`
                 ? props.theme.color.white.dark
                 : props.theme.color.primary
         }`};
-`;
+`
