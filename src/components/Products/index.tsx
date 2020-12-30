@@ -25,3 +25,9 @@ export const shopProducts: Array<ProductProps> = [
         price_taxes: '1.24',
     },
 ]
+
+export const getProduct = (title: string): ProductProps => {
+    let result = shopProducts.filter((product) => product.title === title)[0]
+
+    return result
+}
