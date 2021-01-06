@@ -7,11 +7,6 @@ import Layout from '../../components/common/layout/layout'
 import Navigation from '../../components/common/navigation/navigation'
 import Footer from '../../components/sections/footer'
 
-import L1WebHosting from '../../components/shop/l1-web-hosting'
-import L1EmailService from '../../components/shop/l1-email-service'
-import L1WebSupport from '../../components/shop/l1-web-support'
-import L2WebSupport from '../../components/shop/l2-web-support'
-
 import GetStarted from '../../components/sections/get-started'
 
 import { Products, shopProducts } from '../../components/Products'
@@ -29,13 +24,7 @@ const ShopIndexPage = () => (
                 </SectionTitle>
 
                 <ShopWrapper>
-                    {/* <Product {...l1EmailServiceProps}/> */}
                     <Products productsList={shopProducts} />
-
-                    <L1EmailService />
-                    <L1WebHosting />
-                    <L1WebSupport />
-                    <L2WebSupport />
                 </ShopWrapper>
             </Container>
         </StyledSection>

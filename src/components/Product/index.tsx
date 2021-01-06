@@ -15,6 +15,7 @@ import {
 export interface ProductProps {
     title: string
     subtitle: string
+    serviceUrl: string
     imgUrl: string
 
     price_stripe?: string
@@ -27,6 +28,7 @@ export interface ProductProps {
 export const Product: React.FC<ProductProps> = ({
     title,
     subtitle,
+    serviceUrl,
     imgUrl,
     price_stripe,
     price_service,
@@ -39,7 +41,7 @@ export const Product: React.FC<ProductProps> = ({
             <ProductContent>
                 <ProductHeader>{title}</ProductHeader>
                 <p>{subtitle}</p>
-                <Link to="/sign-up/level-one-email-service">
+                <Link to={serviceUrl}>
                     <ProductImage src={imgUrl} />
                 </Link>
 
