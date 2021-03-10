@@ -33,7 +33,6 @@ module.exports = {
                 icon: `static/${site.icon}`, // This path is relative to the root of the site.
             },
         },
-        `gatsby-plugin-gatsby-cloud`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-force-trailing-slashes`,
