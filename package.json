@@ -1,7 +1,7 @@
 {
-  "name": "sphere-join-club-cta",
+  "name": "openlandmark",
   "private": true,
-  "description": "An starter project for sphere join club initiative",
+  "description": "A blog by Luis E. Lopez to help document various topics in software development",
   "version": "0.1.0",
   "author": "Luis E. Lopez <luis@openalandmark.io>",
   "dependencies": {
