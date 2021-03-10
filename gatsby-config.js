@@ -1,233 +1,46 @@
 const path = require(`path`)
-require(`dotenv`).config({
-    path: `.env.${process.env.NODE_ENV}`,
-})
 
-const config = require(`./src/utils/site-config`)
-const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
+const site = require(`./src/utils/site-config`)
+const theme = require(`./src/utils/theme-config`)
 
-let ghostConfig
-
-try {
-    ghostConfig = require(`./.ghost`)
-} catch (e) {
-    ghostConfig = {
-        production: {
-            apiUrl: process.env.GHOST_API_URL,
-            contentApiKey: process.env.GHOST_CONTENT_API_KEY,
-        },
-    }
-} finally {
-    const { apiUrl, contentApiKey } =
-        process.env.NODE_ENV === `development`
-            ? ghostConfig.development
-            : ghostConfig.production
-
-    if (!apiUrl || !contentApiKey || contentApiKey.match(/<key>/)) {
-        throw new Error(
-            `GHOST_API_URL and GHOST_CONTENT_API_KEY are required to build. Check the README.`
-        ) // eslint-disable-line
-    }
-}
-
-/**
- * This is the place where you can tell Gatsby which plugins to use
- * and set them up the way you want.
- *
- * Further info 👉🏼 https://www.gatsbyjs.org/docs/gatsby-config/
- *
- */
 module.exports = {
     siteMetadata: {
-        siteUrl: config.siteUrl,
+        title: site.metadata.title,
+        description: site.metadata.description,
+        author: site.metadata.author,
     },
     plugins: [
-        /**
-         *  Stripe Plugins
-         */
-        // {
-        //     resolve: `gatsby-source-stripe`,
-        //     options: {
-        //         objects: [`Sku`, `Product`, `Subscription`, `Plan`, `Price`],
-        //         secretKey: process.env.STRIPE_SEC_KEY,
-        //         downloadFiles: true,
-        //     },
-        // },
-        {
-            resolve: `gatsby-plugin-gtag`,
-            options: {
-                // your google analytics tracking id
-                trackingId: `UA-182367679-1`,
-                // Puts tracking script in the head instead of the body
-                head: true,
-                // enable ip anonymization
-                anonymize: false,
-            },
-        },
-        /**
-         *  Content Plugins
-         */
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: path.join(__dirname, `src`, `pages`),
-                name: `pages`,
-            },
-        },
-        // Setup for optimised images.
-        // See https://www.gatsbyjs.org/packages/gatsby-image/
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: path.join(__dirname, `src`, `assets`, `images`),
-                name: `images`,
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: path.join(
-                    __dirname,
-                    `src`,
-                    `assets`,
-                    `images`,
-                    `product`
-                ),
-                name: `product`,
-            },
-        },
-        `gatsby-plugin-sharp`,
-        `gatsby-transformer-sharp`,
-        {
-            resolve: `gatsby-source-ghost`,
-            options:
-                process.env.NODE_ENV === `development`
-                    ? ghostConfig.development
-                    : ghostConfig.production,
-        },
-        /**
-         *  Utility Plugins
-         */
-        {
-            resolve: `gatsby-plugin-ghost-manifest`,
-            options: {
-                short_name: config.shortTitle,
-                start_url: `/`,
-                background_color: config.backgroundColor,
-                theme_color: config.themeColor,
-                display: `minimal-ui`,
-                icon: `static/${config.siteIcon}`,
-                legacy: true,
-                query: `
-                {
-                    allGhostSettings {
-                        edges {
-                            node {
-                                title
-                                description
-                            }
-                        }
-                    }
-                }
-              `,
-            },
-        },
-        {
-            resolve: `gatsby-plugin-feed`,
-            options: {
-                query: `
-                {
-                    allGhostSettings {
-                        edges {
-                            node {
-                                title
-                                description
-                            }
-                        }
-                    }
-                }
-              `,
-                feeds: [generateRSSFeed(config)],
-            },
-        },
-        {
-            resolve: `gatsby-plugin-advanced-sitemap`,
-            options: {
-                query: `
-                {
-                    allGhostPost {
-                        edges {
-                            node {
-                                id
-                                slug
-                                updated_at
-                                created_at
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostPage {
-                        edges {
-                            node {
-                                id
-                                slug
-                                updated_at
-                                created_at
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostTag {
-                        edges {
-                            node {
-                                id
-                                slug
-                                feature_image
-                            }
-                        }
-                    }
-                    allGhostAuthor {
-                        edges {
-                            node {
-                                id
-                                slug
-                                profile_image
-                            }
-                        }
-                    }
-                }`,
-                mapping: {
-                    allGhostPost: {
-                        sitemap: `posts`,
-                    },
-                    allGhostTag: {
-                        sitemap: `tags`,
-                    },
-                    allGhostAuthor: {
-                        sitemap: `authors`,
-                    },
-                    allGhostPage: {
-                        sitemap: `pages`,
-                    },
-                },
-                exclude: [
-                    `/dev-404-page`,
-                    `/404`,
-                    `/404.html`,
-                    `/offline-plugin-app-shell-fallback`,
-                ],
-                createLinkInHead: true,
-                addUncaughtPages: true,
-            },
-        },
-        `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
-        `gatsby-plugin-force-trailing-slashes`,
-        `gatsby-plugin-offline`,
-        `gatsby-plugin-typescript`,
-        `gatsby-plugin-sass`,
+        `gatsby-plugin-image`,
         {
-            resolve: `gatsby-plugin-root-import`,
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/assets/images`,
+            },
+        },
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: site.metadata.title,
+                short_name: site.title,
+                start_url: `/`,
+                background_color: theme.color.background.primary,
+                theme_color: theme.color.primary,
+                display: `minimal-ui`,
+                icon: `static/${site.icon}`, // This path is relative to the root of the site.
+            },
+        },
+        `gatsby-plugin-gatsby-cloud`,
+        `gatsby-plugin-offline`,
+        `gatsby-plugin-catch-links`,
+        `gatsby-plugin-force-trailing-slashes`,
+        `gatsby-plugin-sass`,
+        `gatsby-plugin-styled-components`,
+        {
+            resolve: 'gatsby-plugin-root-import',
             options: {
                 assets: path.join(__dirname, 'src/assets'),
                 components: path.join(__dirname, 'src/components'),
@@ -237,11 +50,8 @@ module.exports = {
                 utils: path.join(__dirname, 'src/utils'),
             },
         },
-        {
-            resolve: `gatsby-plugin-styled-components`,
-            options: {
-                // Add any options here
-            },
-        },
+        // this (optional) plugin enables Progressive Web App + Offline functionality
+        // To learn more, visit: https://gatsby.dev/offline
+        // `gatsby-plugin-offline`,
     ],
 }
