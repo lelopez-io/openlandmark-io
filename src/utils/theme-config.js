@@ -21,9 +21,9 @@ module.exports = {
     },
 
     color: {
-        primary: `#15171A`, // Used in Offline Manifest
-        secondary: `#098c8c`,
-        accent: `#cca86e`,
+        primary: `rgb(7, 20, 53)`, // Used in Offline Manifest
+        secondary: `#005070`,
+        accent: `rgb(204, 168, 110)`,
         background: {
             primary: `#e9e9e9`, // Used in Offline Manifest
             white: `#ffffff`,
@@ -37,10 +37,12 @@ module.exports = {
         },
         black: {
             lightest: `#ABA8AF`,
-            light: `#564F62`,
-            regular: `#071435`,
+            light: `#4a4a4a`,
+            regular: `rgb(7, 20, 53)`,
+            dark: `#232424`,
         },
         blue: {
+            button: `#007c9d`,
             regular: `#005070`,
             hover: `#0074A3`,
             light: `#007290`,
@@ -48,6 +50,9 @@ module.exports = {
             lightest: `#88C8D4`,
             dark: `#00516C`,
             darkest: `#232424`,
+        },
+        yellow: {
+            gold: `rgb(204, 168, 110)`,
         },
     },
     screen: {
