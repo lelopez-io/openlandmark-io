@@ -19,6 +19,9 @@ module.exports = {
         larger: `font-size: 40px; line-height: 50px;`,
         xlarge: `font-size: 48px; line-height: 48px;`,
     },
+    transition: {
+        link: `color 0.2s ease-in-out`,
+    },
 
     color: {
         primary: `rgb(7, 20, 53)`, // Used in Offline Manifest
