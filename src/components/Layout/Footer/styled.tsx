@@ -16,7 +16,6 @@ export const FooterCopyright = styled.div`
 
     a {
         text-decoration: none;
-        color: hsla(0, 0%, 0%, 0.8);
     }
 `
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { HeaderWrapper, HeaderContainer } from './styled'
+import { MainWrapper, MainContainer } from './styled'
 
 interface LayoutProps {
     children: React.ReactNode
@@ -8,8 +8,8 @@ interface LayoutProps {
 
 export const Main: React.FC<LayoutProps> = ({ children }) => {
     return (
-        <HeaderWrapper>
-            <HeaderContainer>{children}</HeaderContainer>
-        </HeaderWrapper>
+        <MainWrapper>
+            <MainContainer>{children}</MainContainer>
+        </MainWrapper>
     )
 }
