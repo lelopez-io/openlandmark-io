@@ -8,10 +8,10 @@
     Openlandmark.io
 </h1>
 <h2 align="center">
-    An Opionated Boilerplate
+    Openlandmark
 </h2>
 
-Kick off your project with this boilerplate that ships with the main Gatsby configuration files you might need.
+A blog by Luis E. Lopez to help document various topics in software development
 
 _This project uses yarn for node packages!!!_
 
@@ -19,11 +19,8 @@ _This project uses yarn for node packages!!!_
 
 1.  **Clone this repo.**
 
-    Use the Gatsby CLI to create a new site, specifying this repo as the starter.
-
     ```shell
-    # create a new Gatsby site using the Openlandmark starter
-    gatsby new openlandmark-project https://github.com/lelopez-io/openlandmark-starter-default
+    git clone git@github.com:lelopez-io/openlandmark-io.git
     ```
 
 1.  **Start developing.**
@@ -31,7 +28,7 @@ _This project uses yarn for node packages!!!_
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd openlandmark-project/
+    cd openlandmark-io/
     gatsby develop
     ```
 
