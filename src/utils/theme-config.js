@@ -40,7 +40,7 @@ module.exports = {
         },
         black: {
             lightest: `#ABA8AF`,
-            light: `#4a4a4a`,
+            light: `#14171a`,
             regular: `rgb(7, 20, 53)`,
             dark: `#232424`,
         },
@@ -56,6 +56,9 @@ module.exports = {
         },
         yellow: {
             gold: `rgb(204, 168, 110)`,
+        },
+        red: {
+            highlight: `color: #f14668;`,
         },
     },
     screen: {
