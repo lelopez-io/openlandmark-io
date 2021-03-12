@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const FooterWrapper = styled.footer`
-    margin-bottom: 1.45rem;
+    margin-bottom: 0;
+    background-color: #14171a;
+    border-radius: 12px 12px 0 0;
 `
 
 export const FooterContainer = styled.div`
