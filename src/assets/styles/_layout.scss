@@ -9,7 +9,7 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: hsla(0, 0%, 0%, 0.8);
+    color: #4a4a4a;
     font-family: georgia, serif;
     font-weight: normal;
     word-wrap: break-word;
@@ -256,7 +256,7 @@ h6 {
     padding-right: 0;
     padding-top: 0;
     margin-bottom: 1.45rem;
-    color: inherit;
+    color: #363636;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-weight: bold;
@@ -344,6 +344,7 @@ p {
     padding-right: 0;
     padding-top: 0;
     margin-bottom: 1.45rem;
+    font-family: georgia, serif !important;
 }
 pre {
     margin-left: 0;
@@ -436,6 +437,9 @@ th {
 }
 li {
     margin-bottom: calc(1.45rem / 2);
+    font-family: 'HK Grotesk Bold';
+    font-size: 16px;
+    line-height: 27.2px;
 }
 ol li {
     padding-left: 0;
@@ -540,4 +544,7 @@ pre tt:after {
     html {
         font-size: 100%;
     }
+}
+span {
+    color: #fff;
 }
