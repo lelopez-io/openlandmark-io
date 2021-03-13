@@ -31,6 +31,7 @@ module.exports = {
             primary: `#e9e9e9`, // Used in Offline Manifest
             white: `#ffffff`,
             light: `#f8f8f8`,
+            black: `#14171a`,
         },
         white: {
             regular: `#ffffff`,
@@ -39,9 +40,11 @@ module.exports = {
             darker: `#eeeeee`,
         },
         black: {
+            regular: `rgb(7, 20, 53)`,
+            normal: `#4a4a4a`,
+            strong: `#363636`,
             lightest: `#ABA8AF`,
             light: `#14171a`,
-            regular: `rgb(7, 20, 53)`,
             dark: `#232424`,
         },
         blue: {
