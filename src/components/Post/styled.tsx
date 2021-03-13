@@ -2,6 +2,12 @@ import styled from 'styled-components'
 
 export const PostContainer = styled.article`
     line-height: 1.7em;
+
+    p {
+        code {
+            color: #f14668;
+        }
+    }
 `
 
 export const PostTitle = styled.h1`
