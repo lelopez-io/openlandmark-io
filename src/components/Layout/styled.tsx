@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
     html {
         ${`` /* change this if implementing light/dark mode functionality */}
         color: ${(props) => props.theme.color.white.lessdark};
-        background-color: ${(props) => props.theme.color.background.black};
+        background-color: ${(props) => props.theme.color.background.white};
     }
 
     body {

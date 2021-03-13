@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderWrapper = styled.header`
     position: fixed;
     width: 100vw;
-    background-color: ${(props) => props.theme.color.background.black};
+    background-color: ${(props) => props.theme.color.background.white};
 
     z-index: 6;
 `
@@ -28,6 +28,7 @@ export const HeaderLogo = styled.h1`
 
     position: relative;
     z-index: 10;
+    filter: brightness(0.2);
 
     img {
         max-height: 50px;

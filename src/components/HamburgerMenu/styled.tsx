@@ -15,7 +15,7 @@ export const MenuWrapper = styled.div<MenuWrapperProps>`
     &:after,
     &:before,
     div {
-        background-color: #fff;
+        background-color: #14171a;
         border-radius: 3px;
         content: '';
         display: block;
